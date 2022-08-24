@@ -12,11 +12,13 @@ document.querySelector('.out-2').textContent = c / d;
 
 // Task 3.
 // Создайте две переменные e = 3 и f = 5. Выведите на страницу  в .out-3 результат сложения e + f.
-
-// document.querySelector('.out-3').textContent = 
+let e = 3;
+let f = 5;
+document.querySelector('.out-3').textContent = e + f;
 
 // Task 4.
 // Создайте две переменные e1 = '3' и f1 = 5. Выведите на страницу  в .out-4 результат сложения e1 + f1. Объясните разницу.
+let e1 = "3"
 
 // document.querySelector('.out-4').textContent = 
 
