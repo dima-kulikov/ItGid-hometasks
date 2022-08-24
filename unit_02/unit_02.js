@@ -1,8 +1,8 @@
 // Task 1.
 // Создайте две переменные a = 7 и b = 9. Выведите в консоль результа умножения a на b.
-let a = 7;
-let b = 9;
-console.log(a * b);
+// let a = 7;
+// let b = 9;
+// console.log(a * b);
 // Task 2.
 // Создайте две переменные c = 7 и d = 9. Выведите на страницу в .out-2 результат деления c на d.
 let c = 7;
@@ -71,7 +71,8 @@ document.querySelector('.b-9').onclick = t9;
 // По нажатию на кнопку .b-10 выполняется функция t10, которая выводит в div.out-10 то, что пользователь ввел в input.i-10 умноженное на 20.
 
 function t10() {
-
+let data = document.querySelector('.i-10').value;
+document.querySelector('.out-10').innerHTML = data * 20;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -80,7 +81,8 @@ document.querySelector('.b-10').onclick = t10;
 // По нажатию на кнопку .b-11 выполняется функция t11, которая выводит на страницу в .out-11 число, которое ввел пользователь в i-11 и к нему добавленное число 55. В этой задаче мы не приводим к числу полученное из input.
 
 function t11() {
-
+let data = document.querySelector('.i-11').value;
+document.querySelector(".out-11").innerHTML = data + 55;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -89,7 +91,10 @@ document.querySelector('.b-11').onclick = t11;
 // По нажатию на кнопку выполняется функция t12. Функция должна получить данные из input i.12-1 и i.12-2 (пользователь вводин в них фамилию и имя). После чего вывести в .out-12  строку 'Hello имя фамилия', где имя - имя пользователя и фамилия - введенная фамилия. Обращаю ваше внимание - с этого момента мы работаем строго по заданию. Hello - с большой буквы. Между Hello имя один пробел (вы же включили отображение пробелов?). Вы не добавляете "от себя" - запятые, любые другие слова и символы. Аналогичные правила действуют и дальше по курсу.
 
 function t12() {
+let dataFirstName = document.querySelector(".i-12-1").value;
+let dataLastName = document.querySelector(".i-12-2").value;
 
+document.querySelector(".out-12").innerHTML = `Hello ${dataFirstName} ${dataLastName}`
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -98,7 +103,9 @@ document.querySelector('.b-12').onclick = t12;
 // При нажатии кнопки .b-13 выполняется t13. Функция получает из input.i-13-1 и .i-13-2 числа в переменные a, b. После чего в .out-13 выводит их сумму. Преобразовывайте a, b в числа!!!!
 
 function t13() {
-
+let a = Number(document.querySelector('.i-13-1').value);
+let b = Number(document.querySelector('.i-13-2').value);
+document.querySelector(".out-13").innerHTML = a + b;
 }
 
 document.querySelector('.b-13').onclick = t13;
