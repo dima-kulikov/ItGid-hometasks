@@ -19,40 +19,50 @@ document.querySelector('.out-3').textContent = e + f;
 // Task 4.
 // Создайте две переменные e1 = '3' и f1 = 5. Выведите на страницу  в .out-4 результат сложения e1 + f1. Объясните разницу.
 let e1 = "3"
-
-// document.querySelector('.out-4').textContent = 
+let f1 = 5;
+document.querySelector('.out-4').textContent = e1 + f1;
+// e1 - записанно как строка, в данном случае +, js считает как соединение строк и по этому выдает ответ 35
 
 // Task 5.
 // Создайте две переменные e2 = 3 и f2 = 0. Выведите на страницу  в .out-5 результат деления e2 на f2.
-
-// document.querySelector('.out-5').textContent = 
+let e2 = 3;
+let f2 = 0;
+ document.querySelector('.out-5').textContent = e2 / f2;
+ // деление на ноль дает тип данных Infinity
 
 // Task 6.
 // Создайте две переменные e3 = 3 и f3 = 'Hello'. Выведите на страницу  в .out-6 результат сложения двух переменных.
-
-// document.querySelector('.out-6').textContent = 
+let e3 = 3;
+let f3 = "Hello";
+document.querySelector('.out-6').textContent = e3 + f3;
+//происходит конкатенация строк
 
 // Task 7.
 // Создайте две переменные e4 = 3 и f4 = 'Hello'. Выведите на страницу  в .out-7 результат умножения двух переменных.
-
-// document.querySelector('.out-7').textContent = 
+let e4 = 3;
+let f4 = "Hello"
+document.querySelector('.out-7').textContent = e4 * f4;
+//выведет тип значения NaN (не номер), по скольку мі пробуем сделать математическое действие умножая число на строку.
 
 // Task 8.
 // По нажатию на кнопку .b-8 выполняется функция, которая выводит в div.out-8 то, что пользователь ввел в input.i-8.
+let btn8 = document.querySelector('.b-8');
 
 function t8() {
-    // value всегда получаем внутри функции
-    // let data = document.querySelector('.i-8').value; // получили значение
-    // тут выводим
+    let data = document.querySelector('.i-8').value;
+    return document.querySelector('.out-8').innerHTML = data;
 }
 
-document.querySelector('.b-8').onclick = t8;
+btn8.onclick = t8;
+
 
 // Task 9.
 // По нажатию на кнопку .b-9 выполняется функция t9, которая выводит в div.out-9 то, что пользователь ввел в input.i-9. Добавьте очистку input после нажатия кнопки.
 
 function t9() {
-
+let data = document.querySelector(".i-9");  
+document.querySelector('.out-9').innerHTML = data.value;
+data.value = '';
 }
 
 document.querySelector('.b-9').onclick = t9;
