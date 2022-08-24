@@ -114,7 +114,8 @@ document.querySelector('.b-13').onclick = t13;
 // По нажатию кнопки .b-14 выполняется функция t14. Она заменяет значение value в input.i-14 на строку 'Go';
 
 function t14() {
-
+   let data = document.querySelector(".i-14");
+   data.value = "Go";
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -123,7 +124,8 @@ document.querySelector('.b-14').onclick = t14;
 //  По нажатию кнопки .b-15 выполняется функция t15. Она присваивает .i-15 свойство style.border = "4px solid red";
 
 function t15() {
-
+    let data = document.querySelector(".i-15");
+    data.style.border = "4px solid red"
 }
 
 document.querySelector('.b-15').onclick = t15;
