@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="section">
+        <section class="first">
+            <input type="checkbox" id="checkbox" onchange="checkboxChange()"> checkbox
+            <br>
+            <br>
+            <div class="checkbox">...</div>
+        </section>
+        <section class="first">
+            <input type="radio" name="rad" value="1">
+            <input type="radio" name="rad" value="2">
+            <input type="radio" name="rad" value="3">
+            <input type="radio" name="rad" value="4">
+            <input type="radio" name="rad" value="5">
+            <div class="btn">Показать выбранный</div>
+            <div class="radio-text">...</div>
+        </section>
+
+    </div>
+
+
+
+    <script>
+        function checkboxChange() {
+            let checkbox = document.querySelector('#checkbox');
+            let checkboxDiv = document.querySelector('.checkbox');
+
+            if (checkbox.checked) {
+                checkboxDiv.innerHTML = 'Активен';
+            } else {
+                checkboxDiv.innerHTML = 'Не активен';
+            }
+        };
+
+        let btn = document.querySelector(".btn");
+
+        btn.addEventListener("click", () => {
+            let rad = document.getElementsByName('rad');
+            let radioText = document.querySelector(".radio-text");
+
+            for (let i = 0; i < rad.length; i++) {
+                if (rad[i].checked) {
+                    radioText.innerHTML = i + 1;
+                    // radioText.innerHTML = `${rad[i].value}`;
+                }
+            }
+        });
+
+    </script>
+</body>
+<style>
+    .section {
+        max-width: 900px;
+        margin: 0 auto;
+        outline: 1px solid green;
+        padding: 15px;
+    }
+
+    .first {
+        margin: 20px 0;
+        padding: 15px;
+        outline: 1px solid grey;
+    }
+
+    .btn {
+        border: 2px solid red;
+        padding: 2px 4px;
+        width: max-content;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+</style>
+
+</html>
