@@ -12,11 +12,11 @@
     <div class="section">
 
         <select name="" id="select1" onchange="f1()">
-            <option value="">перший</option>
-            <option value="">другий</option>
-            <option value="">третій</option>
-            <option value="">четвертий</option>
-            <option value="">пятий</option>
+            <option value="перший">перший</option>
+            <option value="другий">другий</option>
+            <option value="третій">третій</option>
+            <option value="четвертий">четвертий</option>
+            <option value="пятий">пятий</option>
         </select>
         <div id="value">Выбранный Вами пункт: <span id="value-span"></span></div>
     </div>
@@ -30,13 +30,18 @@
 
     <script>
         function f1() {
+            // select.option // коллекция из подэлементов
+            // select.value // значение выбранного в данный момент
+            // select.selectedIndex // номер выбранного
+
             let pageSelect = document.querySelector('#select1').selectedIndex; // говорит о номере с массива которій вібран
             let pageSelectOptions = document.querySelector('#select1').options;
+            let pageSelectValue = document.querySelector('#select1').value;
             let selectValue = document.querySelector('#value');
             let selectValueSpan = document.querySelector('#value-span');
 
-            selectValueSpan.innerHTML = `  ${pageSelectOptions[pageSelect].text} `;  // берем значение по номеру с массива и забираем его текст
-
+            // selectValueSpan.innerHTML = `  ${pageSelectOptions[pageSelect].text} `;  // берем значение по номеру с массива и забираем его текст
+            selectValueSpan.innerHTML = pageSelectValue;
         };
 
         function f2() {
