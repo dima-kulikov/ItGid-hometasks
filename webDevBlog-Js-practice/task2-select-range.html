@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="section">
+
+        <select name="" id="select1" onchange="f1()">
+            <option value="">перший</option>
+            <option value="">другий</option>
+            <option value="">третій</option>
+            <option value="">четвертий</option>
+            <option value="">пятий</option>
+        </select>
+        <div id="value">Выбранный Вами пункт: <span id="value-span"></span></div>
+    </div>
+
+    <div class="section">
+        <input id="range" type="range" min="0" max="10" step="1" value="0" oninput="f2()">
+        <div class="block">0</div>
+    </div>
+
+
+
+    <script>
+        function f1() {
+            let pageSelect = document.querySelector('#select1').selectedIndex; // говорит о номере с массива которій вібран
+            let pageSelectOptions = document.querySelector('#select1').options;
+            let selectValue = document.querySelector('#value');
+            let selectValueSpan = document.querySelector('#value-span');
+
+            selectValueSpan.innerHTML = `  ${pageSelectOptions[pageSelect].text} `;  // берем значение по номеру с массива и забираем его текст
+
+        };
+
+        function f2() {
+            let range = document.getElementById('range').value;
+            let rangeBlock = document.querySelector('.block');
+            rangeBlock.style.width = range * 20 + 'px';
+            rangeBlock.style.height = range * 20 + 'px';
+            rangeBlock.innerHTML = range;
+        }
+    </script>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .section {
+        max-width: 900px;
+        margin: 20px auto;
+        outline: 1px solid green;
+        padding: 15px;
+    }
+
+    #value {
+        margin-top: 15px;
+    }
+
+    #value-span {
+        border: 1px solid green;
+        padding: 2px 3px;
+        width: 100px;
+        height: 20px;
+        margin-bottom: -2px;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .block {
+        width: 10px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(172, 129, 64);
+        padding: 15px;
+    }
+</style>
+
+</html>
