@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="section">
+
+        <div class="radius-block">
+            <p class="p-styling">Верх</p>
+            <input id="range-top" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+            <input id="range-top-text" type="text" value="0">
+
+            <p class="p-styling">Право</p>
+            <input id="range-right" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+            <input id="range-right-text" type="text" value="0">
+
+            <p class="p-styling">Низ</p>
+            <input id="range-bottom" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+            <input id="range-bottom-text" type="text" value="0">
+
+            <p class="p-styling">Ліво</p>
+            <input id="range-left" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+            <input id="range-left-text" type="text" value="0">
+
+            <p>Товщина стінок</p>
+            <input id="border" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+            <input id="border-text" type="text" value="0">
+        </div>
+
+
+        <div class="block-creation"></div>
+
+    </div>
+
+    <script>
+
+
+        function f1() {
+            let block = document.querySelector('.block-creation');
+
+            let rangeTop = document.getElementById('range-top').value;
+            let rangeTopText = document.getElementById('range-top-text');
+            let rangeRight = document.getElementById('range-right').value;
+            let rangeRightText = document.getElementById('range-right-text');
+            let rangeBottom = document.getElementById('range-bottom').value;
+            let rangeBottomText = document.getElementById('range-bottom-text');
+            let rangeLeft = document.getElementById('range-left').value;
+            let rangeLeftText = document.getElementById('range-left-text');
+            let rangeBorder = document.getElementById('border').value;
+            let rangeBorderText = document.getElementById('border-text');
+
+
+
+            rangeTopText.value = rangeTop;
+            rangeRightText.value = rangeRight;
+            rangeBottomText.value = rangeBottom;
+            rangeLeftText.value = rangeLeft;
+            rangeBorderText.value = rangeBorder;
+
+
+
+
+
+            block.style.border = rangeBorder + 'px solid red';
+            block.style.borderRadius = rangeTop + '% ' + rangeRight + '% ' + rangeBottom + '% ' + rangeLeft + '% ';
+        }
+    </script>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .section {
+        max-width: 900px;
+        margin: 20px auto;
+        outline: 1px solid green;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .block-creation {
+        border: 1px solid red;
+        width: 250px;
+        height: 250px;
+    }
+
+    .p-styling {
+        margin: 5px;
+    }
+
+    .radius-block {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+</html>
