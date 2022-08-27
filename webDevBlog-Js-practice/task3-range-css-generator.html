@@ -9,42 +9,78 @@
 </head>
 
 <body>
-
+    <h1> CSS Генератор фігури</h1>
+    <p> Тренуйся і створюй потрібну тобі фігуру, після бери код і використовуй у своїх цілях </p>
     <div class="section">
 
-        <div class="radius-block">
-            <p class="p-styling">Верх</p>
-            <input id="range-top" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
-            <input id="range-top-text" type="text" value="0">
+        <div class="col">
+            <div class="radius-block">
+                <div class="block-outline">
+                    <p>Висота </p>
+                    <input id="range-height" type="range" min="1" max="500" step="1" value="150" oninput="f1()">
+                    <input id="range-height-text" type="text" value="150">
 
-            <p class="p-styling">Право</p>
-            <input id="range-right" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
-            <input id="range-right-text" type="text" value="0">
 
-            <p class="p-styling">Низ</p>
-            <input id="range-bottom" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
-            <input id="range-bottom-text" type="text" value="0">
+                    <p>Ширина </p>
+                    <input id="range-width" type="range" min="1" max="500" step="1" value="150" oninput="f1()">
+                    <input id="range-width-text" type="text" value="150">
+                </div>
 
-            <p class="p-styling">Ліво</p>
-            <input id="range-left" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
-            <input id="range-left-text" type="text" value="0">
+                <div class="block-outline">
+                    <p class="p-styling">Лівий верх</p>
+                    <input id="range-top" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+                    <input id="range-top-text" type="text" value="0">
 
-            <p>Товщина стінок</p>
-            <input id="border" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
-            <input id="border-text" type="text" value="0">
+                    <p class="p-styling">Правий верх</p>
+                    <input id="range-right" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+                    <input id="range-right-text" type="text" value="0">
+
+                    <p class="p-styling">право Низ</p>
+                    <input id="range-bottom" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+                    <input id="range-bottom-text" type="text" value="0">
+
+                    <p class="p-styling">Ліво</p>
+                    <input id="range-left" type="range" min="0" max="100" step="1" value="0" oninput="f1()">
+                    <input id="range-left-text" type="text" value="0">
+                </div>
+                <div class="block-outline">
+                    <p class="p-styling">Товщина стінок</p>
+                    <input id="border" type="range" min="1" max="50" step="1" value="0" oninput="f1()">
+                    <input id="border-text" type="text" value="0">
+
+                    <p class="p-styling">Повернути фігуру</p>
+                    <input id="rotate" type="range" min="-180" max="180" step="1" value="0" oninput="f1()">
+                    <input id="rotate-text" type="text" value="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="block-creation"></div>
         </div>
 
 
-        <div class="block-creation"></div>
-
     </div>
-
+    <div class="section">
+        <div class="col">
+            <div class="btn">Взяти HTML/CSS код</div>
+        </div>
+        <div class="col">
+            <div id="take-code"></div>
+        </div>
+    </div>
     <script>
 
 
         function f1() {
+            //сам блок
             let block = document.querySelector('.block-creation');
-
+            // переменные высота и ширина
+            let rangeHeight = document.getElementById('range-height').value;
+            let rangeHeightText = document.getElementById('range-height-text');
+            let rangeWidth = document.getElementById('range-width').value;
+            let rangeWidthText = document.getElementById('range-width-text');
+            // переменные для радиуса
             let rangeTop = document.getElementById('range-top').value;
             let rangeTopText = document.getElementById('range-top-text');
             let rangeRight = document.getElementById('range-right').value;
@@ -55,27 +91,62 @@
             let rangeLeftText = document.getElementById('range-left-text');
             let rangeBorder = document.getElementById('border').value;
             let rangeBorderText = document.getElementById('border-text');
+            // поворот фигуры
+            let rangeRotate = document.getElementById('rotate').value;
+            let rangeRotateText = document.getElementById('rotate-text');
 
 
 
+            // инпутам даю значения с ползунков для высоты и ширины
+            rangeHeightText.value = rangeHeight;
+            rangeWidthText.value = rangeWidth;
+            // инпутам даю значения с ползунков для радиуса
             rangeTopText.value = rangeTop;
             rangeRightText.value = rangeRight;
             rangeBottomText.value = rangeBottom;
             rangeLeftText.value = rangeLeft;
             rangeBorderText.value = rangeBorder;
+            // инпут для поворота
+            rangeRotateText.value = rangeRotate;
 
 
-
-
-
+            // прописываю высоту и ширину
+            block.style.height = rangeHeight + 'px ';
+            block.style.width = rangeWidth + 'px ';
+            // передаю радиус и толщину бордера
             block.style.border = rangeBorder + 'px solid red';
             block.style.borderRadius = rangeTop + '% ' + rangeRight + '% ' + rangeBottom + '% ' + rangeLeft + '% ';
-        }
+            // прописываю поворот фигуры
+            block.style.transform = 'rotate(' + rangeRotate + 'deg)';
+
+        };
+
+        //часть кода с написанием кода на страничке
+        document.querySelector('.btn').addEventListener('click', () => {
+            let takeCode = document.getElementById('take-code');
+
+            let takeAllCode = document.createElement('div');
+            takeAllCode.innerHTML = `
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+`;
+            takeCode.prepend(takeAllCode);
+        })
+
+
     </script>
 </body>
 <style>
     * {
         box-sizing: border-box;
+    }
+
+    body {
+        text-align: center;
     }
 
     .section {
@@ -88,14 +159,33 @@
         align-items: center;
     }
 
+    .col:first-child {
+        width: 35%;
+    }
+
+    .col:last-child {
+        width: 65%;
+    }
+
+    .col:last-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    .block-outline {
+        border: 1px solid black;
+        padding: 5px;
+        margin: 5px;
+    }
+
     .block-creation {
         border: 1px solid red;
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
     }
 
     .p-styling {
-        margin: 5px;
+        margin: 5px 0 1px;
     }
 
     .radius-block {
