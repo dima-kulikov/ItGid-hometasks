@@ -71,8 +71,24 @@
     </div>
     <script>
 
+        // Создание кода, который при клике выдает отрисовук html/css
+        // let takeCodehtml = document.getElementById('take-code');
+
+
+        let takeCode = document.getElementById('take-code');
+        let takeAllCodeh1 = document.createElement('div');
+        let takeAllCodehtml = document.createElement('div');
+        let takeAllCode = document.createElement('div');
+
+
+        takeCode.prepend(takeAllCode);
+        takeCode.prepend(takeAllCodehtml);
+        takeCode.prepend(takeAllCodeh1);
+
+
 
         function f1() {
+
             //сам блок
             let block = document.querySelector('.block-creation');
             // переменные высота и ширина
@@ -81,7 +97,7 @@
             let rangeWidth = document.getElementById('range-width').value;
             let rangeWidthText = document.getElementById('range-width-text');
             // переменные для радиуса
-            let rangeTop = document.getElementById('range-top').value;
+            const rangeTop = document.getElementById('range-top').value;
             let rangeTopText = document.getElementById('range-top-text');
             let rangeRight = document.getElementById('range-right').value;
             let rangeRightText = document.getElementById('range-right-text');
@@ -94,7 +110,6 @@
             // поворот фигуры
             let rangeRotate = document.getElementById('rotate').value;
             let rangeRotateText = document.getElementById('rotate-text');
-
 
 
             // инпутам даю значения с ползунков для высоты и ширины
@@ -119,57 +134,78 @@
             // прописываю поворот фигуры
             block.style.transform = 'rotate(' + rangeRotate + 'deg)';
 
+
+            //часть кода с написанием кода на страничке
+            document.querySelector('.btn').addEventListener('click', () => {
+
+                takeAllCodeh1.innerHTML = `  
+                // <b>HTML Code</b>:
+                <br> 
+                <br> 
+                `;
+
+                takeAllCodehtml.textContent = "<div class='creation-block'> </div>";
+
+                takeAllCode.innerHTML = `
+                <br> 
+                // <b>CSS Code</b>:
+                <br> 
+                .creation-block {
+                    <br>
+                height: ${rangeHeight}px;
+                <br>
+                width: ${rangeWidth}px;
+                <br>
+                border: ${rangeBorder}px solid red;
+                <br>
+                border-radius: ${rangeTop}% ${rangeRight}% ${rangeBottom}% ${rangeLeft}%;
+                <br>
+                transform: rotate(${rangeRotate}deg);
+                <br>
+                };
+                `;
+            });
+
+
         };
-
-        //часть кода с написанием кода на страничке
-        document.querySelector('.btn').addEventListener('click', () => {
-            let takeCode = document.getElementById('take-code');
-
-            let takeAllCode = document.createElement('div');
-            takeAllCode.innerHTML = `
-
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-</ul>
-`;
-            takeCode.prepend(takeAllCode);
-        })
-
 
     </script>
 </body>
 <style>
     * {
         box-sizing: border-box;
+
     }
 
     body {
         text-align: center;
+
+
     }
 
     .section {
         max-width: 900px;
         margin: 20px auto;
-        outline: 1px solid green;
+        outline: 1px solid rgb(223, 223, 223);
         padding: 15px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        background-color: rgb(246, 246, 246);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
 
     .col:first-child {
         width: 35%;
     }
 
-    .col:last-child {
-        width: 65%;
-    }
+
 
     .col:last-child {
         display: flex;
         justify-content: center;
+        width: 65%;
+        text-align: start;
     }
 
     .block-outline {
@@ -191,6 +227,18 @@
     .radius-block {
         display: flex;
         flex-direction: column;
+    }
+
+    .btn {
+        padding: 5px 15px;
+        border: 2px solid green;
+        cursor: pointer;
+        background-color: antiquewhite;
+        font-weight: 600;
+    }
+
+    .btn:hover {
+        background-color: rgb(236, 190, 126);
     }
 </style>
 
