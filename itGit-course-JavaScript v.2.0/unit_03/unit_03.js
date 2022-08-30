@@ -4,7 +4,7 @@
 function f1(){
 let input = document.querySelector(".i-1").value
 document.querySelector(".out-1").innerHTML = input == 4;
-
+console.log('jdf')
 
 }
 
