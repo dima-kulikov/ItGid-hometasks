@@ -51,7 +51,15 @@ document.querySelector('.b-3').onclick = f3;
 // Пользователь вводит в .i-4 год своего рождения. Есть кнопка .b-4 которая запускает функцию f4. Функция должна вывести в .out-4 число 1 если пользователю больше или равно 18 лет, и 0 если меньше.
 
 function f4(){
+const accessAge = 2004;
+let ageUser = Number(document.querySelector('.i-4').value);
+let answer = document.querySelector(".out-4");
 
+if( ageUser <= accessAge) {
+   answer.innerHTML = 1;
+}else {
+   answer.innerHTML = 0;
+}
 }
 
 document.querySelector('.b-4').onclick = f4;
