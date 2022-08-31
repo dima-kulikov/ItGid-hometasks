@@ -4,9 +4,7 @@
 function f1(){
 let input = document.querySelector(".i-1").value
 document.querySelector(".out-1").innerHTML = input == 4;
-console.log('jdf')
-
-}
+};
 
 document.querySelector('.b-1').onclick = f1;
 
@@ -18,8 +16,14 @@ let a21 = 45;
 let a22 = 32;
 
 function f2(){
+   let answer = document.querySelector(".out-2");
 
-}
+   if (a21 > a22) {
+      answer.innerHTML = a21;
+   }else {
+      answer.innerHTML = a22;
+   };
+};
 
 document.querySelector('.b-2').onclick = f2;
 
@@ -29,8 +33,16 @@ document.querySelector('.b-2').onclick = f2;
 // Проведите самостоятельный тест работы, введите пары чисел 4 и 9, 9 и 22, 5 и 111.
 
 function f3(){
+let firstInput = Number(document.querySelector('.i-31').value);
+let secondInput = Number(document.querySelector('.i-32').value);
+let answer = document.querySelector(".out-3");
 
-}
+if(firstInput > secondInput) {
+   answer.innerHTML = firstInput;
+}else {
+   answer.innerHTML = secondInput;
+};
+};
 
 document.querySelector('.b-3').onclick = f3;
 
