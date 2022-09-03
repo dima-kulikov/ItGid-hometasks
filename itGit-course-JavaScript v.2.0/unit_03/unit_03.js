@@ -195,7 +195,7 @@ document.querySelector('.b-12').onclick = f12;
 function f13(){
 let input130 = document.querySelector(".i-130").value;
 document.querySelector('.out-13').innerHTML = (typeof input130);
-}
+};
 
 document.querySelector('.b-13').onclick = f13;
 
@@ -219,7 +219,7 @@ switch (select) {
    case '/': answer.innerHTML = inputFirst / inputSecond;
    break;
 };
-}
+};
 
 document.querySelector('.b-14').onclick = f14;
 
@@ -228,8 +228,18 @@ document.querySelector('.b-14').onclick = f14;
 // Дан select .s-151 и .s-152, каждый из которых содержит 1 и 0.  Дан select .s-153, который содержит две операции - && и || . Дана кнопка .b-15, при нажатии на которую срабатывает функция f15. Функция выводит в .out-15 результат логических операций выбранных в 3 select к числам выбранным в первом и втором select. Например выбрано 1 1 &&, нужно вывести результат операции 1&&1 т.е. 1 или 0.
 
 function f15(){
+let inputFirst = +document.querySelector(".s-151").value;
+let inputSecond = +document.querySelector(".s-152").value;
+let inputThree = document.querySelector(".s-153").value
+let out = document.querySelector(".out-15");
 
-}
+switch (inputThree) {
+   case '&&': out.innerHTML = inputFirst && inputSecond;
+   break;
+   case "||": out.innerHTML = inputFirst || inputSecond;
+   break;
+};
+};
 
 document.querySelector('.b-15').onclick = f15;
 
