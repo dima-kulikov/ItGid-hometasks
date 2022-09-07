@@ -5,7 +5,12 @@
 
 
 function t1() {
+    let task1 = '';
 
+    for(let i=0; i < 17; i++) {
+        task1 += i + "_"
+    };
+    document.querySelector(".out-1").innerHTML = task1;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -15,8 +20,15 @@ document.querySelector('.b-1').onclick = t1;
 // 12_14_16_18_20_22_24_26_28_30_32_34_36_38_
 //Разделитель - нижнее подчеркивание. Задача решается с помощью цикла.
 
-function t2() {
 
+
+function t2() {
+    let task2 = '';
+
+    for(let i = 12; i < 39; i = i+2) {
+        task2 += i +"_";
+    };
+    document.querySelector(".out-2").innerHTML = task2;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -28,7 +40,12 @@ document.querySelector('.b-2').onclick = t2;
 // Разделитель - нижнее подчеркивание. Задача решается с помощью цикла.
 
 function t3() {
+    let answer = '';
 
+    for(let i = 25; i >= 7; i--) {
+        answer += i + "_";
+    };
+    document.querySelector(".out-3").innerHTML = answer;
 }
 
 document.querySelector('.b-3').onclick = t3;
