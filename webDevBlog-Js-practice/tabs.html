@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div id="tabs">
+            <div class="tab whiteborder">tab 1</div>
+            <div class="tab">tab 2</div>
+            <div class="tab">tab 3</div>
+
+
+            <div class="tabсontent show">1</div>
+            <div class="tabсontent ">2</div>
+            <div class="tabсontent ">3</div>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+
+
+        const tabsform = document.querySelector("#tabs");
+        const tabAll = document.getElementsByClassName('tab')
+        const tabContent = document.getElementsByClassName("tabсontent");
+
+        tabsform.addEventListener("click", (e) => {
+            console.log(e.target)
+            removeAll()
+            if (e.target.className == 'tab') {
+                console.log('dwdwd')
+                for (let i = 0; i < tabAll.length; i++) {
+                    if (e.target == tabAll[i]) {
+                        showThisContent(i);
+                        break;
+                    }
+                }
+            }
+        })
+
+        function showThisContent(i) {
+            removeAll();
+            tabAll[i].classList.add('whiteborder');
+            tabContent[i].classList.add('show');
+        }
+
+        function removeAll() {
+            for (let i = 0; i < tabAll.length; i++) {
+                tabAll[i].classList.remove('whiteborder');
+                tabContent[i].classList.remove('show');
+            }
+        }
+    </script>
+</body>
+<style>
+    section {
+        max-width: 900px;
+        margin: 0 auto;
+        outline: 1px solid green;
+        padding: 15px;
+    }
+
+    .tab {
+        display: inline-block;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+    }
+
+    .whiteborder {
+        border: 1px solid black;
+        border-bottom: 1px solid white;
+    }
+
+    .tabсontent {
+        width: 300px;
+        height: 60px;
+        border: 1px solid black;
+        position: relative;
+        top: -1px;
+        padding: 10px;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+</html>
