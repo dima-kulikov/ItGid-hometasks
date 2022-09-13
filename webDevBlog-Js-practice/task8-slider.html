@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade vizible">
+            <div class="numbertext"></div>
+            <img src="https://wowslider.com/sliders/demo-5/data/images/sur.jpg" alt="">
+            <div class="text">text-1</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="https://wowslider.com/sliders/demo-51/data1/images/car.jpg" alt="">
+            <div class="text">text-2</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="https://wowslider.com/sliders/demo-5/data/images/sweden.jpg" alt="">
+            <div class="text">text-3</div>
+        </div>
+        <!-- Просто добавлять блоки, точки подтянет автоматически, js так же добавит количество автоматически -->
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="https://wowslider.com/sliders/demo-37/data1/images/jungle.jpg" alt="">
+            <div class="text">text-4</div>
+        </div>
+
+
+
+        <a class="prev" onclick="nextSlider(-1)">&#10094</a>
+        <a class="next" onclick="nextSlider(1)">&#10095</a>
+    </div>
+
+
+    <div class="dot-list" style="text-align: center;">
+    </div>
+    <script>
+        let mySlides = document.getElementsByClassName("mySlides"); // собираем массив всех у кого есть этот класс
+        let dot = document.getElementsByClassName("dot"); // собираем массив всех у кого есть этот класс
+        let numberText = document.getElementsByClassName('numbertext');
+        let dotList = document.querySelector('.dot-list');
+
+        //код добавляет кружки под фото, автоматически, в зависимости от того, сколько фото блоков
+        for (let i = 0; i < mySlides.length; i++) {
+            let span = document.createElement('span');
+            span.innerHTML = ` <span class="dot" onclick="dotSlider(${i})"></span> `;
+            dotList.append(span);
+        }
+
+        numberText[0].innerHTML = `1/${mySlides.length}`
+        dot[0].classList.add('active')
+        //счетчик который нужен, для того чтобы подставлять под номер массива
+        let counter = 0;
+        // функция для кружков внизу "dot"
+        function dotSlider(e) {
+            counter = e;
+            for (let i = 0; i < mySlides.length; i++) {
+                mySlides[i].classList.remove("vizible");
+                dot[i].classList.remove("active");
+            }
+
+            mySlides[counter].classList.add("vizible");
+            dot[counter].classList.add("active");
+            console.log(counter)
+        }
+
+        // функция для фотографий
+        function nextSlider(e) {
+
+            counter += e;
+
+            if (counter > mySlides.length - 1) {
+                counter = 0;
+            }
+            else if (counter == -1) {
+                counter = mySlides.length - 1;
+            }
+            for (let i = 0; i < mySlides.length; i++) {
+                mySlides[i].classList.remove("vizible");
+                dot[i].classList.remove("active");
+            }
+
+            mySlides[counter].classList.add("vizible");
+            dot[counter].classList.add("active");
+            numberText[counter].innerHTML = `${counter + 1}/${mySlides.length}`
+        }
+    </script>
+</body>
+<style>
+    .mySlides {
+        display: none;
+    }
+
+    .vizible {
+        display: block;
+    }
+
+    .slideshow-container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .mySlides img {
+        max-width: 100%;
+    }
+
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .numbertext {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+
+    .text {
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        background-color: #bbb;
+        transform: translate(-50%);
+    }
+
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .dot {
+        cursor: pointer;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        margin: 0 2px;
+        display: inline-block;
+        background-color: #bbb;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #5b5b5b;
+    }
+
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+</style>
+
+</html>
