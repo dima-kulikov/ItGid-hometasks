@@ -118,6 +118,14 @@ document.querySelector('.b-6').onclick = t6;
 // Задача решается с помощью цикла.
 
 function t7() {
+let input7 = document.querySelector(".i-7").value;
+let out7 = document.querySelector(".out-7");
+let numberout = '';
+console.log(input7)
+    for(let i=0; i <= input7; i++) {
+        numberout = i + "_" + numberout;
+    };
+    out7.innerHTML = numberout;
 
 }
 
@@ -133,6 +141,14 @@ document.querySelector('.b-7').onclick = t7;
 // Задача решается с помощью цикла.
 
 function t8() {
+let firstInput = +document.querySelector(".i-81").value;
+let secondInput = +document.querySelector(".i-82").value;
+let answer = ' ';
+
+    for(let i = firstInput; i <= secondInput; i++) {
+        answer += i + '_';
+    };
+    document.querySelector(".out-8").innerHTML = answer;
 
 }
 
@@ -150,9 +166,21 @@ document.querySelector('.b-8').onclick = t8;
 // цикл - один
 
 function t9() {
+let firstInput = +document.querySelector(".i-91").value;
+let secondInput = +document.querySelector(".i-92").value;
+let value = '';
 
+    if(firstInput < secondInput) {
+        for(let i = firstInput; i <= secondInput; i++) {
+            value += i + '_';
+        }
+    }else {
+        for(let i = firstInput; i >= secondInput; i--) {
+            value = i + '_' + value;
+        }
+    }
+    document.querySelector('.out-9').innerHTML = value;
 }
-
 document.querySelector('.b-9').onclick = t9;
 
 
@@ -161,7 +189,12 @@ document.querySelector('.b-9').onclick = t9;
 // Разделитель - знак подчеркивания. Задача решается через цикл, а четность - через шаг (равный 2).
 
 function t10() {
+let answer = '';
 
+    for(let i = 1950; i <= 1970; i = i + 2) {
+        answer += i + '_';
+    }
+    document.querySelector('.out-10').innerHTML = answer;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -176,7 +209,13 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
-
+let divs11 = document.getElementsByClassName('div-11');
+let answer = '';
+// console.log(divs11[0].innerHTML)
+    for(let i = 0; i < divs11.length; i++) {
+        answer += divs11[i].innerHTML + "_";
+    };
+    document.querySelector('.out-11').innerHTML = answer;
 }
 
 document.querySelector('.b-11').onclick = t11;
