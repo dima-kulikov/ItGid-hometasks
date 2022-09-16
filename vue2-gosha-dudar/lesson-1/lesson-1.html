@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 
@@ -13,11 +14,15 @@
 
 
     <div id="app">
+        <span @mouseover="renameText">button</span>
         <p>{{ title }}</p>
+
+        <p :class="styleColor">color: {{styleColor}}</p>
+        <input type="text" v-on:input="styleColor = $event.target.value">
     </div>
 
 
-    <script src="/vue-gosha-dudar/lesson-1/js/lesson-1.js"></script>
+    <script src="./js/lesson-1.js"></script>
 </body>
 
 </html>
