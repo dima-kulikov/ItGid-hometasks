@@ -228,7 +228,11 @@ document.querySelector('.b-11').onclick = t11;
 
 
 function t12() {
+let divs12 = document.getElementsByClassName("div-12");
 
+for(let i = 0; i < divs12.length; i++) {
+    divs12[i].style.background = "orange"
+}
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -237,7 +241,11 @@ document.querySelector('.b-12').onclick = t12;
 // С помощью цикла присвойте всем input .i-13 value равное 1 для первого, 2 для второго и 3 для третьего.
 
 function t13() {
+let allInputs = document.getElementsByClassName('i-13');
 
+for(let i = 0; i < allInputs.length; i++) {
+    allInputs[i].value = i + 1;
+}
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -250,7 +258,13 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
+let allInputs = document.getElementsByClassName('i-14');
 
+for( let i = 0; i < allInputs.length; i++) {
+    if (allInputs[i].checked) {
+        document.querySelector(".out-14").innerHTML = allInputs[i].value;
+    }
+}
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -261,7 +275,13 @@ document.querySelector('.b-14').onclick = t14;
 // Подсказка (10 - i) + '_' + i + '_'
 
 function t15() {
+let firstNumber = 10;
+let answer = '';
 
+for(let i = 0; i <= firstNumber; i++) {
+    answer += `${firstNumber - i}_${i}_`
+}
+document.querySelector(".out-15").innerHTML = answer;
 }
 
 document.querySelector('.b-15').onclick = t15;
