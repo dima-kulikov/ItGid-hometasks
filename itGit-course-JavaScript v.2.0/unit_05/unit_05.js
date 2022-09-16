@@ -7,7 +7,7 @@
 function t1() {
     let task1 = '';
 
-    for(let i=0; i < 17; i++) {
+    for(let i = 1; i < 17; i++) {
         task1 += i + "_"
     };
     document.querySelector(".out-1").innerHTML = task1;
