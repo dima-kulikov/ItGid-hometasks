@@ -35,9 +35,9 @@ function t2() {
     let answer = "";
 
     for(let i = 1; i <= 3; i++) {
-        answer += `${i} <br>`
+        answer += `${i}<br>`
         for(let k = 1; k <= 3; k++) {
-            answer += `*_`;
+            answer += '*_';
         }
         answer += '<br>'
     };
