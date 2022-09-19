@@ -5,7 +5,13 @@
 
 
 function t1() {
-
+    let answer = '';
+    step = 1;
+    while (step <= 50) {
+        answer += step + '_';
+        step++;
+    };
+    document.querySelector('.out-1').innerHTML = answer;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -16,7 +22,14 @@ document.querySelector('.b-1').onclick = t1;
 // от 2 до 46 c шагом 2. Разделитель - нижнее подчеркивание. Задача решается с помощью цикла  while.
 
 function t2() {
+let answer = '';
+let step = 2;
 
+    while(step <= 46) {
+        answer += `${step}_`;
+        step = step + 2;
+    };
+    document.querySelector(".out-2").innerHTML = answer;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -28,7 +41,14 @@ document.querySelector('.b-2').onclick = t2;
 // от 25 до 7 c шагом 1. Разделитель - нижнее подчеркивание. Задача решается с помощью цикла  while.
 
 function t3() {
+let answer = '';
+let step = 25;
 
+    while(step >= 7) {
+        answer += `${step}_`;
+        step--;
+    };
+    document.querySelector('.out-3').innerHTML = answer;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -40,7 +60,14 @@ document.querySelector('.b-3').onclick = t3;
 
 
 function t4() {
+let answer = '';
+let step = 77;
 
+    while( step >= 35) {
+        answer += `${step}_`;
+        step = step - 3;
+    };
+    document.querySelector('.out-4').innerHTML = answer;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -52,7 +79,18 @@ document.querySelector('.b-4').onclick = t4;
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и одна звездочка если число нечетное, и две звездочки если четное. Задача решается с помощью цикла  while.
 
 function t5() {
+let answer = '';
+let step = 1;
 
+    while(step <= 17) {
+        if(step % 2 ==0) {
+            answer += `${step}_**`;
+        }else {
+            answer += `${step}_*`;
+        }
+        step++;
+    }
+    document.querySelector('.out-5').innerHTML = answer
 }
 
 document.querySelector('.b-5').onclick = t5;
