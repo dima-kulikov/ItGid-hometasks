@@ -14,7 +14,7 @@
 
 
     <div id="app">
-        <span @mouseover="renameText">button</span>
+        <!-- <span @mouseover="renameText">button</span>
         <p>{{ title }}</p>
 
         <p :class="styleColor">color: {{styleColor}}</p>
@@ -25,6 +25,19 @@
         <p>паервое число: {{firstNum}}</p>
         <p> второе: {{secondNum}}</p>
         <p> three: {{threedNum}}</p>
+
+        <p>вывод списка</p>
+        <ul>
+            <li v-for="car in cars">{{car.name}}, age: {{car.age}}</li>
+        </ul> -->
+
+        <input type="text" v-on:input="firstNum = $event.target.value">
+        <input type="text" v-on:input="secondNum = $event.target.value">
+
+
+        <p>Вывод: {{longText}}</p>
+
+        <p>{{title | redtext}}</p>
     </div>
 
 

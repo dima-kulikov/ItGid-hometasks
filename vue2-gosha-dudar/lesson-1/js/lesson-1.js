@@ -3,8 +3,14 @@ new Vue ({
     data: {
         title: "Hello world!",
         styleColor:'',
-        firstNum: 1,
-        secondNum: 2,
+        firstNum: '',
+        secondNum: '',
+        cars: [
+            {name: 'Dima', age: 35 },
+            {name: 'Lesia', age: 27 },
+            {name: 'Kuma', age: 2 },
+            {name: 'kaka' , age: 17 },
+        ]
     },
     methods: {
         renameText () {
@@ -18,6 +24,15 @@ new Vue ({
     computed: {
         threedNum () {
            return this.firstNum
+        },
+        longText () {
+          return  this.firstNum * this.secondNum;
+        }
+    },
+    filters : {
+        redtext (el) {
+         return   el.toUpperCase ();
+        // return   el.style.color = 'red';
         }
     }
 });
