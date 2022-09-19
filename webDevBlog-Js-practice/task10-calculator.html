@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Первое число: <input onclick="number()" type="text" id="n1" placeholder="ввод"></p>
+    <p>Второе число: <input type="text" id="n2" placeholder="ввод"></p>
+    <p> числа: <span class="number"> </span></p>
+
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+
+    <p>Вывод: <span class="answer"></span></p>
+    <script>
+
+        let answer = document.querySelector('.answer');
+        let allNum = document.querySelector('.number');
+        let cool = ''
+
+        function plus() {
+            let n1 = +document.querySelector("#n1").value;
+            let n2 = +document.getElementById("n2").value;
+            answer.innerHTML = n1 + n2;
+        }
+        function minus() {
+            let n1 = +document.querySelector("#n1").value;
+            let n2 = +document.getElementById("n2").value;
+
+            answer.innerHTML = n1 - n2;
+        }
+        function number() {
+            if (+document.querySelector("#n1").value == 0) {
+                return;
+            }
+            cool += +document.querySelector("#n1").value;
+            allNum.innerHTML = cool;
+
+        }
+    </script>
+</body>
+
+</html>
