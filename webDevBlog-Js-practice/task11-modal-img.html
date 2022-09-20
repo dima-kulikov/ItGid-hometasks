@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img class="img" src="https://www.imgacademy.com/sites/default/files/legacy-hotel-22.jpg" alt="img">
+    <div class="modal-img">
+        <img src="https://www.imgacademy.com/sites/default/files/legacy-hotel-22.jpg" alt="">
+        <div onclick="closeBtn()" class="close"> close</div>
+    </div>
+
+
+    <script>
+        let img = document.querySelector('.img');
+        let modalImg = document.querySelector('.modal-img');
+        let close = document.querySelector('.close');
+
+        img.addEventListener('click', openimg);
+
+        function openimg() {
+            modalImg.style.display = 'block';
+        };
+
+        function closeBtn() {
+            modalImg.style.display = 'none';
+        }
+    </script>
+</body>
+
+<style>
+    .img {
+        max-width: 300px;
+        cursor: pointer;
+
+    }
+
+    .modal-img {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(11, 11, 11, 0.9);
+        height: 100%;
+
+    }
+
+    .modal-img img {
+        width: 900px;
+        margin: 5% auto;
+        display: block;
+
+    }
+
+    .close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 22px;
+        color: aliceblue;
+        cursor: pointer;
+    }
+</style>
+
+</html>
