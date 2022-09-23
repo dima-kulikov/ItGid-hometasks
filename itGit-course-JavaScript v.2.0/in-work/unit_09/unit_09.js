@@ -109,13 +109,18 @@ for (let i = 0; i < div9.length; i++) {
 //  Task 10
 // Усложним предыдущие задачи. С помощью цикла повим на блоки .out-10 событие клик. По клику должна выполняться функция f10. Функция, должна делать toggle класса .bg-orange тому .out-10 на котором кликнули.
 
-//let div10 = тут получите все out-10
+let div10 = document.querySelectorAll('.out-10');
+
 
 function f10() {
 
+    this.classList.toggle('bg-orange');
 }
 
-// а тут цикл, похожий на предыдущее задание
+for( let i = 0; i < div10.length; i++) {
+
+    div10[i].onclick = f10;
+}
 
 
 
@@ -124,6 +129,10 @@ function f10() {
 
 
 function f11() {
+    let div = document.createElement('div');
+    div.innerHTML = 25;
+
+    document.querySelector('.out-11').appendChild(div);
 
 }
 
@@ -134,7 +143,11 @@ document.querySelector('.b-11').onclick = f11;
 
 
 function f12() {
+ let div = document.createElement('div');
+ div.innerHTML = 12;
+ div.classList.add('bg-12');
 
+ document.querySelector('.out-12').appendChild(div);
 }
 
 document.querySelector('.b-12').onclick = f12;

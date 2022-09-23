@@ -60,9 +60,11 @@ document.querySelector('.b-4').onclick = f4;
 // Вывод в out-5
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 8
 
-// let ar5 =
+ let ar5 = [1,2,3,4,5,6,7,8,9,10];
 
 function f5() {
+    let answer = ar5[0] + ar5[2] + ar5[3];
+    document.querySelector('.out-5').innerHTML = answer;
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -73,9 +75,16 @@ document.querySelector('.b-5').onclick = f5;
 // Вывод - по нажатию кнопки b-6
 // Вывод в out-6
 
-// let ar6 =
+ let ar6 = ['Dima', 'bliznets', 04, 06];
 
 function f6() {
+let answer = '';
+
+    for( let i = 0; i < ar6.length; i++) {
+        answer += ar6[i] + ' ';
+    }
+
+    document.querySelector('.out-6').innerHTML = answer;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -89,6 +98,19 @@ document.querySelector('.b-6').onclick = f6;
 let ar7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
 
 function f7() {
+    let answer = '';
+
+    ar7.push('italy');
+    ar7.push('turkey');
+    ar7.push('vietnam');
+
+    for( let i = 0; i < ar7.length; i++) {
+        answer += ar7[i] + ' ';
+    }
+
+    document.querySelector('.out-7').innerHTML = answer;
+    console.log(ar7)
+
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -100,9 +122,15 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод - по нажатию кнопки b-8
 // Вывод в out-8
 
-let ar8 = [];
+let ar8 = ['zero','один','два',3.14,17,'пять',5];
 
 function f8() {
+let answer = '';
+    for(let i = 0; i < ar8.length; i++) {
+        answer += ar8[i] + '-';
+    };
+    document.querySelector('.out-8').innerHTML = answer;
+    document.querySelector('.out-8-1').innerHTML = ar8.length;
 }
 
 document.querySelector('.b-8').onclick = f8;
