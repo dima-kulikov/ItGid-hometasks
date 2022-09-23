@@ -44,7 +44,9 @@ document.querySelector('.b-4').onclick = f4;
 // По нажатию .b-5 запускайте функцию f5, которая проверяет наличие класса .bg-orange у блока .out-4 (да, именно у out-4 ). Результат - true или false, выводите в .out-5.
 
 function f5() {
+let out4 = document.querySelector('.out-4');
 
+document.querySelector('.out-5').innerHTML = out4.classList.contains('bg-orange');
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -54,7 +56,9 @@ document.querySelector('.b-5').onclick = f5;
 // По нажатию .b-6 запускайте функцию f6, которая выводит в .out-6 количество параграфов с классом .p-6.
 
 function f6() {
-
+let allp6 = document.getElementsByClassName('p-6');
+console.log(allp6)
+document.querySelector('.out-6').innerHTML = allp6.length;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -66,7 +70,9 @@ document.querySelector('.b-6').onclick = f6;
 let blocks7 = document.querySelectorAll('.out-7');
 
 function f7() {
-    //внутри цикла blocks7[i].classList....
+    for(let i = 0; i < blocks7.length; i++) {
+        blocks7[i].classList.add('bg-orange');
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -78,7 +84,9 @@ document.querySelector('.b-7').onclick = f7;
 let blocks8 = document.querySelectorAll('.out-8');
 
 function f8() {
-    //внутри цикла blocks8[i].classList....
+    for(let i = 0; i < blocks8.length; i++) {
+        blocks8[i].classList.toggle('bg-orange');
+    }
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -88,7 +96,7 @@ document.querySelector('.b-8').onclick = f8;
 // Усложним предыдущие задачи. С помощью цикла повесим на блоки .out-9 событие клик. По клику должна выполняться функция f9. Функция, должна добавлять класс .bg-orange тому .out-9 на котором кликнули.
 
 function f9() {
-    //this.classList...  // все решается одной строкой
+    this.classList.add('bg-orange') ;
 }
 
 let div9 = document.querySelectorAll('.out-9');

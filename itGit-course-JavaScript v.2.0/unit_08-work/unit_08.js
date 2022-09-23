@@ -173,7 +173,20 @@ document.querySelector('.b-8').onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку и при необходимости поменять местами значения в переменных местами, а потом запускаем цикл  while.
 
 function t9() {
+let i91 = +document.querySelector(".i-91").value;
+let i92 = +document.querySelector(".i-92").value;
+let answer = '';
 
+if (i91 > i92) {
+    let a = i91
+    i91 = i92;
+    i92 = a;
+}
+while ( i91 <= i92) {
+    answer += `${i91}_`;
+    i91++;
+}
+document.querySelector('.out-9').innerHTML = answer;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -184,7 +197,15 @@ document.querySelector('.b-9').onclick = t9;
 // Разделитель знак подчеркивания. Задача решается через цикл, а четность - через шаг (равный 2).
 
 function t10() {
+    let answer = '';
+    let a = 1950;
+    let b = 1966;
 
+while( a <= b) {
+    answer += `${a}_`;
+    a = a + 2;
+};
+document.querySelector(".out-10").innerHTML = answer;
 }
 
 document.querySelector('.b-10').onclick = t10;
