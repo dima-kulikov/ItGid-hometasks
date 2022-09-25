@@ -220,7 +220,15 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
+let allDiv = document.querySelectorAll('.div-11');
+let answer = '';
+let step = 0;
 
+    while(  step < allDiv.length) {
+    answer += allDiv[step].innerHTML + '_';
+    step++;
+    }
+    document.querySelector('.out-11').innerHTML = answer;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -233,7 +241,13 @@ document.querySelector('.b-11').onclick = t11;
 
 
 function t12() {
-
+let allDiv = document.querySelectorAll('.div-12');
+let step = 0;
+console.log('dd')
+    while(step < allDiv.length) {
+        allDiv[step].style.background = 'orange';
+        step++;
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;

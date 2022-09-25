@@ -12,9 +12,7 @@ function showArr(domElem, arr) {
 let d1 = [33, 'best', 66, 'best'];
 
 function f1() {
-    /**
-     * ваш код здесь
-     */
+    d1.push(document.querySelector('.i-1').value)
     showArr('.out-1', d1);
 }
 
@@ -25,7 +23,7 @@ document.querySelector('.b-1').onclick = f1;
 // функция выполняется при нажатии кнопки b-2
 
 function f2() {
-
+    d1.pop();
     showArr('.out-2', d1);
 }
 
@@ -36,7 +34,7 @@ document.querySelector('.b-2').onclick = f2;
 // функция выполняется при нажатии кнопки b-3
 
 function f3() {
-
+    d1.shift();
     showArr('.out-3', d1);
 }
 
@@ -48,7 +46,7 @@ document.querySelector('.b-3').onclick = f3;
 
 
 function f4() {
-
+    d1.push(document.querySelector('.i-4').value)
     showArr('.out-4', d1);
 }
 
@@ -59,7 +57,7 @@ document.querySelector('.b-4').onclick = f4;
 // функция выполняется при нажатии кнопки b-5
 
 function f5() {
-
+    d1.unshift(document.querySelector('.i-5').value)
     showArr('.out-5', d1);
 }
 
@@ -74,6 +72,9 @@ document.querySelector('.b-5').onclick = f5;
 let d6 = ['test', 5, 12];
 
 function f6() {
+let d6length = d6.length;
+let answer = document.querySelector('.i-6').value;
+d6[d6length] = answer;
 
     showArr('.out-6', d6);
 }
@@ -89,7 +90,8 @@ document.querySelector('.b-6').onclick = f6;
 let d7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
 
 function f7() {
-
+let long = d7.length - 1;
+d7.splice(long, 1)
     showArr('.out-7', d7);
 }
 
@@ -104,7 +106,8 @@ document.querySelector('.b-7').onclick = f7;
 let d8 = [2, '4', 12, 67, 'hello'];
 
 function f8() {
-
+    let answer = document.querySelector('.i-8').value;
+    d8.splice(0,0,answer);
     showArr('.out-8', d8);
 }
 
@@ -119,7 +122,7 @@ document.querySelector('.b-8').onclick = f8;
 let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
-
+    d9.splice(0,1);
     showArr('.out-9', d9);
 }
 
