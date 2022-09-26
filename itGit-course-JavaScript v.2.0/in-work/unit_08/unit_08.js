@@ -259,7 +259,13 @@ document.querySelector('.b-12').onclick = t12;
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
 function t13() {
+allInput = document.querySelectorAll('.i-13');
+let step = 0;
 
+while (step < allInput.length) {
+    allInput[step].value = step + 1;
+    step++;
+}
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -272,7 +278,17 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
+let allInput = document.querySelectorAll('.i-14');
+let step = 0;
 
+while(step < allInput.length) {
+   
+    if(allInput[step].checked) {
+        console.log('defe')
+        document.querySelector('.out-14').innerHTML = allInput[step].value;
+    }
+    step++;
+}
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -283,7 +299,22 @@ document.querySelector('.b-14').onclick = t14;
 // Для вывода использовать цикл  while. Разделитель подчеркивание.
 
 function t15() {
+let step = 0;
+let stepSecond = 3;
+let answer = '';
 
+while(step < stepSecond) {
+    let step2 = 0;
+    let number = 77;
+
+    while(step2 < stepSecond) {
+        answer += number + '_';
+        number = number + 11;
+        step2++
+    }
+step++;
+}
+document.querySelector('.out-15').innerHTML = answer;
 }
 
 document.querySelector('.b-15').onclick = t15;
