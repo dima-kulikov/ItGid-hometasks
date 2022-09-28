@@ -137,7 +137,7 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
-
+d10.reverse();
     showArr('.out-10', d10);
 }
 
@@ -153,7 +153,8 @@ document.querySelector('.b-10').onclick = f10;
 let d11 = [2, 3, 4, 5, 6, 7];
 
 function f11() {
-
+let number = +document.querySelector('.i-11').value;
+document.querySelector('.out-11').innerHTML = d11.indexOf(number);
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -168,7 +169,15 @@ document.querySelector('.b-11').onclick = f11;
 let d12 = [6, 62, 60, 70, 1, 5];
 
 function f12() {
+    let inPut = document.querySelector('.i-12').value;
+    let answer = -1;
 
+    for(let i = 0; i < d12.length; i++) {
+        if(d12[i] == inPut){
+            answer = i;
+        }
+    }
+    document.querySelector('.out-12').innerHTML = answer;
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -183,7 +192,12 @@ document.querySelector('.b-12').onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 
 function f13() {
+let answer = [];
 
+    for(let i = 0; i < d13.length; i++) {
+        answer.unshift(d13[i]);
+    }
+    d13 = answer;
     showArr('.out-13', d13);
 }
 
@@ -199,6 +213,14 @@ document.querySelector('.b-13').onclick = f13;
 let d14 = [];
 
 function f14() {
+let inPut = +document.querySelector('.i-14').value;
+let num = 1;
+
+for (let i = 1; i <= inPut; i++) {
+    d14.push(num);
+}
+document.querySelector('.out-14').innerHTML = d14;
+
 
     showArr('.out-14', d14);
 }
@@ -214,7 +236,12 @@ document.querySelector('.b-14').onclick = f14;
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
+let inP = +document.querySelector('.i-15').value;
 
+    if( d15.indexOf(inP) == -1) {
+        d15.push(inP);
+    };
+    document.querySelector('.out-15').innerHTML = d15;
 
     showArr('.out-15', d15);
 }
@@ -232,7 +259,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-
+    const d16 = d161.concat(d162);
     showArr('.out-16', d16);
 }
 
@@ -250,6 +277,14 @@ let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
 
+    function oneArr (first, second) {
+        for(let i = 0; i < second.length; i++) {
+            first.push(second[i]);
+        };
+        d17 = first;
+    };
+    oneArr(d171, d172)
+
     showArr('.out-17', d17);
 }
 
@@ -265,7 +300,9 @@ document.querySelector('.b-17').onclick = f17;
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
 
 function f18() {
+    let inP = document.querySelector('.i-18').value;
 
+document.querySelector('.out-18').innerHTML = d18.includes(inP);
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -281,7 +318,14 @@ let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged'
 let maxString = '';
 
 function f19() {
+    maxString = d19[0];
 
+    for(let i = 0; i < d19.length; i++) {
+        if(maxString.length < d19[i].length) {
+            maxString = d19[i];
+        };
+    };
+    document.querySelector('.out-19').innerHTML = maxString;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -295,7 +339,9 @@ document.querySelector('.b-19').onclick = f19;
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
+    
 
+    document.querySelector('.out-20').innerHTML = d20.join('');
 }
 
 document.querySelector('.b-20').onclick = f20;
