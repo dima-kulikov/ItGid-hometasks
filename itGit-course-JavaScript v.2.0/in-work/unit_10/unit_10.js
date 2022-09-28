@@ -292,8 +292,7 @@ let ar16_odd = [];
 let ar16_even = [];
 
 function f16() {
-let answer_even = '';
-let answer_odd = '';
+
 
     for(let i = 0; i < ar16.length; i++) {
 
@@ -303,7 +302,20 @@ let answer_odd = '';
             ar16_odd.push(ar16[i])
         }
     };
-    document.querySelector('.out-16-even').innerHTML = ar16_even;
+
+
+    let answer_even = '';
+    let answer_odd = '';
+
+    function answerArr (array, answer) {
+        for(let i = 0; i < array.length; i++) {
+            answer += array[i] + " ";
+        }
+        return answer;
+    }
+
+    document.querySelector('.out-16-even').innerHTML =  answerArr(ar16_even, answer_even);
+    document.querySelector('.out-16-odd').innerHTML = answerArr(ar16_odd, answer_odd);
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -317,7 +329,16 @@ document.querySelector('.b-16').onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
+let answer = '';
 
+    for(let i = 0; i < ar17.length; i++) {
+
+        if(ar17[i] > 3){
+            answer += ar17[i] + ' ';
+    };
+
+    document.querySelector('.out-17').innerHTML = answer;
+}
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -332,7 +353,15 @@ document.querySelector('.b-17').onclick = f17;
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
 function f18() {
+    let start = ar18[0];
 
+    for (let i = 0; i < ar18.length; i++) {
+        if(start < ar18[i]) {
+            start = ar18[i];
+        }
+    }
+
+    document.querySelector('.out-18').innerHTML = start;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -347,7 +376,16 @@ document.querySelector('.b-18').onclick = f18;
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
 function f19() {
+ let start = ar19[0];
 
+    for (let i = 0; i < ar19.length; i++) {
+        if(start > ar19[i]) {
+            start = ar19[i];
+
+        }
+    }
+    
+    document.querySelector('.out-19').innerHTML = ar19.indexOf(start);
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -361,7 +399,12 @@ document.querySelector('.b-19').onclick = f19;
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
+let answer = 0;
+    for (let i = 0; i < ar20.length; i++) {
 
+        answer = answer + ar20[i];
+    }
+    document.querySelector('.out-20').innerHTML = answer;
 }
 
 document.querySelector('.b-20').onclick = f20;
