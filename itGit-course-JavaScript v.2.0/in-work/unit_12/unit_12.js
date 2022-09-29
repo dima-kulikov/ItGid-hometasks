@@ -17,7 +17,7 @@ document.querySelector('.b-1').onclick = f1;
 
 function f2() {
     let a2 = [[12, 'hi'], [45, 87], [55, 13]];
-
+    document.querySelector('.out-2').innerHTML = a2[0][1];
     // return
 }
 
@@ -30,7 +30,7 @@ document.querySelector('.b-2').onclick = f2;
 
 function f3() {
     let a3 = [[1, 2, 3], [3, 4, 5], [6, [7, 'my']]];
-
+document.querySelector('.out-3').innerHTML = a3[2][1][1];
     // return
 }
 
@@ -43,7 +43,7 @@ document.querySelector('.b-3').onclick = f3;
 
 function f4() {
     let a4 = [[1, 2, 3], 'go', [3, 4, 5], [6, [7, 'my']]];
-
+document.querySelector('.out-4').innerHTML = a4[1];
     // return
 }
 
@@ -73,6 +73,11 @@ function f6() {
     let out = '';
     let a6 = [[1, 2], [3, 4], [5, 6], [21, 34], [44, 56]];
 
+    for(let i = 0; i < a6.length; i++) {
+        if(a6[i][0] % 2 !== 0) out += a6[i][0] + ' ';
+        if(a6[i][1] % 2 !== 0) out += a6[i][0] + ' ';
+    };
+    document.querySelector('.out-6').innerHTML = out;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -113,7 +118,13 @@ function f8() {
         [44, 56]
     ];
 
+    for( let i = 0; i < a8.length; i++) {
 
+        for(let k = 0; k < a8[i].length; k++) {
+            if(a8[i][k] % 2 !== 0) out += a8[i][k] + ' ';
+        }
+    }
+    document.querySelector('.out-8').innerHTML = out;
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -131,7 +142,14 @@ function f9() {
         [44, -56]
     ];
 
+    for(let i = 0; i < a9.length; i++) {
 
+        for(let k = 0; k < a9[i].length; k++) {
+            if(a9[i][k] > 0) out += a9[i][k] + " ";
+        }
+    };
+
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 document.querySelector('.b-9').onclick = f9;
