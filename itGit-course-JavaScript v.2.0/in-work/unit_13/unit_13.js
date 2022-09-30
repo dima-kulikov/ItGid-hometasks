@@ -27,7 +27,7 @@ function f2() {
         "five": "hi"
     };
 
-    // return
+    return a2.five;
 }
 
 document.querySelector('.b-2').onclick = () => {
@@ -49,7 +49,7 @@ function f3() {
         "odd": "hi",
         "mix": "mix"
     };
-    // return
+    return a3.odd;
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -71,8 +71,12 @@ let a4 = {
     "mix": "mix"
 };
 function f4() {
+let out = '';
 
-    // return out;
+for( key in a4) {
+    out += `${key} ${a4[key]}  <br>`;
+}
+    return out;
 }
 
 document.querySelector('.b-4').onclick = () => {
@@ -85,6 +89,10 @@ document.querySelector('.b-4').onclick = () => {
 
 function f5(arr, block) {
     let out = '';
+    for(key in arr) {
+        out += `${key} : ${arr[key]} <br>`;
+    }
+    document.querySelector(block).innerHTML = out;
     // цикл
     // формат вывода `${key} : ${arr[key]} <br>`;
     //
@@ -111,7 +119,12 @@ let a6 = {
 };
 
 function f6() {
+let i61 = document.querySelector('.i-61').value;
+let i62 = document.querySelector('.i-62').value;
 
+a6[i61] = i62;
+
+f5(a6, '.out-6');
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -126,7 +139,17 @@ let a7 = {
 
 
 function f7() {
+let i7 = document.querySelector('.i-7').value;
+out = '';
 
+for(key in a7) {
+if(i7 in a7) {
+    out = 1;
+}else {
+out = 0;
+};
+};
+document.querySelector('.out-7').innerHTML = out;
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -140,7 +163,17 @@ let a8 = {
 };
 
 function f8() {
+let i8 = document.querySelector('.i-8').value;
+out = '';
 
+for(key in a8) {
+if(i8 in a8) {
+    out = a8[i8];
+}else {
+out = 0;
+};
+};
+document.querySelector('.out-8').innerHTML = out;
 }
 
 document.querySelector('.b-8').onclick = f8;
