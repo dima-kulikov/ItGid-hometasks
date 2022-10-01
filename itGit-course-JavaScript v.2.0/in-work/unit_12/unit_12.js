@@ -223,7 +223,16 @@ function f12() {
 
     let out = '';
 
-    for(let i = 0; i < a12.length)
+    for(let i = 0; i < a12.length; i++) {
+
+        for(let k = 0; k < a12[i].length; k++) {
+            if( a12[i][k] > 0) {
+                out += a12[i][k] + ' ';
+            };
+        };
+    };
+
+    document.querySelector('.out-12').innerHTML = out
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -234,7 +243,25 @@ document.querySelector('.b-12').onclick = f12;
 let a13 = [];
 
 function f13() {
+let boardNumber = 8;
 
+
+    for(let i = 0; i < boardNumber; i++) {
+        let arr = [];
+        let k = 0 + i;
+        let kLength = boardNumber + i;
+
+        for(k; k < kLength; k++) {
+            if( k % 2 == 0) {
+                arr.push(0)
+            }else
+            arr.push(1)
+        }
+
+        a13.push(arr)
+    }
+
+    console.log(a13)
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -252,7 +279,14 @@ let a14 = [
 ];
 
 function f14() {
+let answer = '';
 
+for( let i = 0; i < a14.length; i++) {
+
+   answer += a14[i].length + ' ';
+};
+
+document.querySelector('.out-14').innerHTML = answer;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -270,6 +304,19 @@ let a15 = [
 ];
 
 function f15() {
+
+    function myFunc (arr) {
+        let out = arr[0].length;
+
+        for(let i = 0; i < arr.length; i++) {
+            if( out < arr[i].length) {
+                out = arr[i].length
+            };
+        };
+        return out;
+    }
+
+    document.querySelector('.out-15').innerHTML = myFunc(a15);
 
 }
 
