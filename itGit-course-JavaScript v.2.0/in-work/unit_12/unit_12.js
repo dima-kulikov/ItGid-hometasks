@@ -346,13 +346,16 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a17 = [
-
+    [4,2,6,8],
+    [5,7,9],
+    4,
+    [3,2,8]
 ];
 
 console.group('Task 17 ================');
-// console.log(a17[3][2] == 8);
-// console.log(a17[1][1] == 7);
-// console.log(a17[0][2] == 6);
+console.log(a17[3][2] == 8);
+console.log(a17[1][1] == 7);
+console.log(a17[0][2] == 6);
 
 console.groupEnd();
 
@@ -361,13 +364,17 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a18 = [
-
+    3,
+    4,
+    [2,12],
+    7,
+    [8,1]
 ];
 
 console.group('Task 18 ================');
-// console.log(a18[0] == 3);
-// console.log(a18[4][0] == 8);
-// console.log(a18[2][1] == 12);
+console.log(a18[0] == 3);
+console.log(a18[4][0] == 8);
+console.log(a18[2][1] == 12);
 
 console.groupEnd();
 
@@ -376,13 +383,15 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a19 = [
-
+    [[1,3]],
+    [[2,5,8]],
+    [[1],[12]]
 ];
 
 console.group('Task 19 ================');
-// console.log(a19[0][0][1] == 3);
-// console.log(a19[1][0][2] == 8);
-// console.log(a19[2][1][0] == 12);
+console.log(a19[0][0][1] == 3);
+console.log(a19[1][0][2] == 8);
+console.log(a19[2][1][0] == 12);
 
 console.groupEnd();
 
@@ -391,12 +400,15 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a20 = [
-
+    1,
+    [[0],[0,9]],
+    [1,2,18],
+    12
 ];
 
 console.group('Task 20 ================');
-// console.log(a20[1][1][1] == 9);
-// console.log(a20[2][2] == 18);
-// console.log(a20[3]== 12);
+console.log(a20[1][1][1] == 9);
+console.log(a20[2][2] == 18);
+console.log(a20[3]== 12);
 
 console.groupEnd();
