@@ -93,10 +93,7 @@ function f5(arr, block) {
         out += `${key} : ${arr[key]} <br>`;
     }
     document.querySelector(block).innerHTML = out;
-    // цикл
-    // формат вывода `${key} : ${arr[key]} <br>`;
-    //
-    // тут вывод в блок block
+
 }
 
 // давайте протестируем f5
@@ -190,7 +187,20 @@ let a9 = {
 };
 
 function f9() {
+    let i9 = document.querySelector('.i-9').value;
+    let out = '';
 
+    for( key in a9) {
+        if(a9[key] == i9) {
+            out += key + ' ';
+        };
+    };
+
+        if( out == '') {
+            out = 0;
+        };
+        
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 document.querySelector('.b-9').onclick = f9;
