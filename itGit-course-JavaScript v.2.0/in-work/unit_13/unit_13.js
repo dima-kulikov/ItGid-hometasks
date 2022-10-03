@@ -210,9 +210,19 @@ document.querySelector('.b-9').onclick = f9;
 
 function f10(arr, val) {
 
+    let out = 0;
+
+    for(key in arr) {
+        if(arr[key] == val) {
+          out = 1;
+        };
+    };
+    if( out == 1) {
+        return true;
+    }else return false;
     //return true;
     //return false;
-}
+};
 
 document.querySelector('.b-10').onclick = () => {
     let a10 = {
@@ -236,6 +246,14 @@ let a11 = {
 };
 
 function f11() {
+    let i11 = document.querySelector('.i-11').value;
+
+    for(key in a11) {
+        if(key = i11) {
+            delete a11[key];
+        }
+    }
+    f5(a11, '.out-11');
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -252,7 +270,14 @@ let a12 = {
 };
 
 function f12() {
+let i12 = document.querySelector('.i-12').value;
 
+    for(key in a12) {
+        if(a12[key] == i12) {
+            delete a12[key];
+        }
+    }
+    f5(a12, '.out-12');
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -268,7 +293,15 @@ let a13 = {
 };
 
 function f13() {
+let answer = 0;
 
+    for(key in a13) {
+        if(typeof(a13+
+            [key]) == 'number') {
+            answer += a13[key];
+        }
+    }
+    document.querySelector('.out-13').innerHTML = answer;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -285,7 +318,14 @@ let a14 = {
 };
 
 function f14() {
+console.log(a14.prim[2])
+let out = '';
 
+for (key in a14) {
+    out += key[0] + ' ';
+}
+
+document.querySelector('.out-14').innerHTML = out;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -303,6 +343,18 @@ let a15 = {
 };
 
 function f15() {
+// console.log(a15.ivan.length)
+
+let out = '';
+
+for(key in a15){
+let numberArr = a15[key].length;
+
+    for(let i = 0; i < a15[key].length; i++) {
+        out += a15[key][i] + ' ';
+    };
+};
+document.querySelector('.out-15').innerHTML = out;
 
 }
 
@@ -327,7 +379,11 @@ let a16 = {
 }
 
 function f16() {
+let out = '';
 
+    console.log(a16.iis8sj.name)
+
+    // for
 }
 
 document.querySelector('.b-16').onclick = f16;
