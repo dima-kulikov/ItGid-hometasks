@@ -381,9 +381,10 @@ let a16 = {
 function f16() {
 let out = '';
 
-    console.log(a16.iis8sj.name)
-
-    // for
+    for(key in a16) {
+        out += a16[key].name + ' ';
+    };
+    document.querySelector('.out-16').innerHTML = out;
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -408,7 +409,14 @@ let a17 = {
 }
 
 function f17() {
+let out = '';
 
+    for(key in a17) {
+        if(a17[key].age > 30) {
+            out += a17[key].name
+        }
+    };
+    document.querySelector('.out-17').innerHTML = out;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -423,9 +431,21 @@ let a18 = {
 }
 
 function f18() {
+let i18 = document.querySelector('.i-18').value;
+let out = '';
 
+for( key in a18) {
+
+    if( key == i18) {
+
+        for(let i = 0; i < a18[key].length; i++) {
+            out += a18[key][i] + ' ';
+        }
+    }
 }
-
+document.querySelector('.out-18').innerHTML = out;
+}
+document.querySelector('.b-18').onclick = f18;
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
 // Пользователь ввел Lisova - вывод red, ввел Obolon - вывод blue.
@@ -437,7 +457,19 @@ let a19 = {
 }
 
 function f19() {
+let out = '';
+let i19 = document.querySelector('.i-19').value;
 
+    for(key in a19) {
+        for(let i = 0; i < a19[key].length; i++) {
+            if((a19[key][i]).toLowerCase() == i19.toLowerCase()) {
+                out = key;
+                
+            };
+    };
+    document.querySelector('.out-19').innerHTML = out;
+
+}
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -452,7 +484,16 @@ let a20 = {
 }
 
 function f20() {
+let out = '';
 
+    for(key in a20) {
+        for(let i = 0; i < a20[key].length; i++) {
+            if(a20[key][i][1] == 2) {
+                out += a20[key][i][0] + ' ';
+            };
+        };
+    };
+    document.querySelector('.out-20').innerHTML = out;
 }
 
 document.querySelector('.b-20').onclick = f20
