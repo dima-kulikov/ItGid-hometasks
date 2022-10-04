@@ -48,7 +48,7 @@ document.querySelector('.b-3').onclick = f3;
  let ar4 = [1,2,3,4,5,6,7,8,9,10];
 
 function f4() {
-    document.querySelector('.out-4').innerHTML = `${ar4[0]}, ${ar4[3]}, ${ar4[8]}`;
+    document.querySelector('.out-4').innerHTML = `${ar4[0]} ${ar4[3]} ${ar4[8]}`;
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -122,9 +122,13 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод - по нажатию кнопки b-8
 // Вывод в out-8
 
-let ar8 = ['zero','один','два',3.14,17,'пять',5];
+let ar8 = [];
 
 function f8() {
+    ar8[3] = 3.14;
+    ar8[4] = 17;
+    ar8[6] = 5;
+
 let answer = '';
     for(let i = 0; i < ar8.length; i++) {
         answer += ar8[i] + '-';
@@ -202,7 +206,7 @@ ar12[0] = ar12[ar12.length -1];
 ar12[ar12.length - 1] = nullArr;
 let answer = '';
 
-for(let i = 0; i < ar11.length -1; i++) {
+for(let i = 0; i < ar12.length; i++) {
     
     answer += ar12[i] + ' '; 
 }
@@ -329,15 +333,14 @@ document.querySelector('.b-16').onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
-let answer = '';
+let answer = [];
 
     for(let i = 0; i < ar17.length; i++) {
 
         if(ar17[i] > 3){
-            answer += ar17[i] + ' ';
+            answer.push(ar17[i]);
     };
-
-    document.querySelector('.out-17').innerHTML = answer;
+    document.querySelector('.out-17').innerHTML = answer.length;
 }
 }
 
