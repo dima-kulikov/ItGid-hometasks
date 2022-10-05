@@ -18,8 +18,35 @@ function showWeather(data) {
 	document.querySelector('.weather__temp').innerHTML = Math.floor(data.main.temp_max);
     document.querySelector('.weather_all-info__first').innerHTML = data.weather[0].description;
     document.querySelector('.weather_all-info__img').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    document.querySelector('.weather_all-info__second span').innerHTML = data.wind.speed;
+    document.querySelector('.weather_all-info__pressure span').innerHTML = data.main.pressure;
+	document.querySelector('.weather_all-info__speed span').innerHTML = data.wind.speed;
+	document.querySelector('.weather_all-info__degree span').innerHTML = data.wind.deg;
 }
+
+///работа с списком
+let weather = document.querySelector('.weather');
+let cityElement = document.createElement('select');
+cityElement.id = 'city';
+weather.appendChild(cityElement);
+
+const myCity = {
+	'Kyiv': '703448',
+	'Lviv': '702550',
+	'Odesa': '698740',
+	'Kharkiv': '706483'
+};
+
+for (key in myCity) {
+	console.log(key)
+	let myOption = document.createElement('option');
+	myOption.value = myCity[key];
+	myOption.innerHTML = key;
+
+	cityElement.appendChild(myOption)
+}
+
+
+
 
 
 

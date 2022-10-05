@@ -8,12 +8,21 @@
 }
 #city {
     display: block;
+    margin-top: 10px;
     /* width: 100%; */
     /* font-size: 28px;
     border: none; */
 }
 .weather__city {
     font-size: 28px;
+}
+.wai-size {
+    width: 33.33%;
+}
+.weather__h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 .weather__temp {
     font-size: 86px;
@@ -31,10 +40,14 @@
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
 }
-.weather_all-info {
+.weather_all-info, .weather_all-info__second{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+}
+.weather_all-info__second {
+    justify-content: space-around;
 }
 .weather_all-info__first {
     font-size: 18px;
