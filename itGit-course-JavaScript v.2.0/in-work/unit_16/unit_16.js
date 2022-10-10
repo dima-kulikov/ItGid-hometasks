@@ -4,7 +4,12 @@
 let a1 = [5,7,9, 11, 13, 15];
 
 function f1() {
+    let out = '';
 
+    for(let item of a1) {
+        out += item + ' ';
+    };
+    document.querySelector('.out-1').innerHTML = out;
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
@@ -15,7 +20,12 @@ document.querySelector('.b-1').addEventListener('click', f1);
 let a2 = [5,7,9, 11, 13, 15];
 
 function f2() {
+    let out = ' ';
 
+    for( key in a2) {
+        out += `${key} ${a2[key]} `;
+    };
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 document.querySelector('.b-2').addEventListener('click', f2);
@@ -24,7 +34,11 @@ document.querySelector('.b-2').addEventListener('click', f2);
 //При нажатии .b-3 выполняете функцию f3. Функция получает div.out-3 со страницы с помощью getElementsByClassName и в каждый записывает число 3, перезаписывая содержимое div.
 
 function f3() {
-
+ let allOut = document.getElementsByClassName('out-3');
+//  console.log(allOut)
+    for(let el of allOut) {
+        el.innerHTML = 3;
+    }
 }
 
 document.querySelector('.b-3').addEventListener('click', f3);
@@ -34,7 +48,11 @@ document.querySelector('.b-3').addEventListener('click', f3);
 //При нажатии .b-4 выполняете функцию f4. Функция получает div.out-4 со страницы с помощью querySelectorAll и в каждый дописывает число 4.
 
 function f4() {
+let out4 = document.querySelectorAll('.out-4');
 
+    for(let item of out4){
+        item.innerHTML = 4;
+    };
 }
 
 document.querySelector('.b-4').addEventListener('click', f4);
@@ -45,7 +63,14 @@ document.querySelector('.b-4').addEventListener('click', f4);
 let a5 = [3,4,5,2,1,7,8,2,4,6,8,11,23,17];
 
 function f5() {
+ let out = [];
 
+    for( item of a5) {
+        if( item > 7) {
+            out.push(item);
+        };
+    };
+    return out;
 }
 
 document.querySelector('.b-5').addEventListener('click', ()=> {
@@ -58,6 +83,21 @@ document.querySelector('.b-5').addEventListener('click', ()=> {
 let a6 = [[1,2], [3,4], [5,6]];
 
 function f6() {
+    let out = [];
+    let outPage = ' ';
+
+    for(let item of a6) {
+       for(let i = 0; i < item.length; i++) {
+        out.push(item[i])
+       };
+    };
+
+    a6 = out;
+
+    for(let item of a6) {
+        outPage += item + ' ';
+    };
+    document.querySelector('.out-6').innerHTML = outPage;
 
 }
 
@@ -69,7 +109,13 @@ document.querySelector('.b-6').addEventListener('click', f6);
 let a7 = [{ id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
 
 function f7() {
+    let out = {};
+    for(let item of a7) {
+        out[item.id] = item.name;
+    };
+    a7 = out;
 
+    return a7;
 }
 
 document.querySelector('.b-7').addEventListener('click', ()=>{
@@ -83,7 +129,14 @@ document.querySelector('.b-7').addEventListener('click', ()=>{
 let a8 = [ { id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
 
 function f8() {
+    let out = [];
 
+    for(item of a8) {
+        out.push(item.id)
+    };
+    a8 = out;
+
+    return a8;
 }
 
 document.querySelector('.b-8').addEventListener('click', ()=>{
@@ -96,7 +149,15 @@ document.querySelector('.b-8').addEventListener('click', ()=>{
 let a9 = [ [4,3,2], [2,5], [0,0,0,0,0]];
 
 function f9() {
+    let number = 0;
 
+    for(let item of a9) {
+       if( number < item.length - 1) {
+        number = item.length -1;
+       };
+    };
+
+return number;
 }
 
 document.querySelector('.b-9').addEventListener('click', ()=>{
@@ -109,6 +170,14 @@ document.querySelector('.b-9').addEventListener('click', ()=>{
 let a10 = [4, 6, 9, 'Hello'];
 
 function f10() {
+let out = {};
+
+    for(let item of a10) {
+        out[item] = item;
+    };
+    a10 = out;
+
+    return a10;
 
 }
 
