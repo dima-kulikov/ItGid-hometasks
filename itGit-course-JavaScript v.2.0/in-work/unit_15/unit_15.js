@@ -8,7 +8,7 @@ s1.add('h');
 s1.add('b');
 s1.add('o');
 
-// console.log(s1)  --РАСКОМЕНТИТЬ !!!
+console.log(s1)  
 
 
 // Task 2
@@ -20,7 +20,7 @@ let s2 = new Set();
 const f2 = () => { 
     let i2 = document.querySelector('.i-2').value;
     s2.add(i2);
-    // console.log(s2);  --РАСКОМЕНТИТЬ !!!
+    console.log(s2);  
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -36,7 +36,7 @@ let i3 = document.querySelector('.i-3').value;
 
     s3.delete(i3);
 
-    // console.log(s3)   --РАСКОМЕНТИТЬ !!!
+    console.log(s3)
  }
 
 document.querySelector('.b-3').onclick = f3;
@@ -52,7 +52,7 @@ const f4 = () => {
 
     document.querySelector('.out-4').innerHTML = s4.has(i4);
     
-    // console.log(s4.has(i4));
+    console.log(s4.has(i4));
  }
 
 document.querySelector('.b-4').onclick = f4;
@@ -140,7 +140,14 @@ document.querySelector('.b-9').onclick = () => {
 // Task 10
 // При нажатии b-10 выполняете функцию f10. Функция должна принимать набор set в качестве параметра и выводить его в указанный элемент. Элемент указывается как второй параметр функции f10. Вывод значений - через пробел.
 
-const f10 = (out_set, elem) => { }
+const f10 = (out_set, elem) => { 
+    let out = '';
+
+    for(key of out_set) {
+        out += key + ' ';
+    };
+    document.querySelector(elem).innerHTML = out;
+}
 
 document.querySelector('.b-10').onclick = () => {
     let a10 = new Set(['4', '5', '6']);
@@ -167,7 +174,9 @@ document.querySelector('.b-11').onclick = f11;
 let str12 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
 
 const f12 = () => {
-
+    let arr = Array.from(str12);
+    let mySet = new Set(arr)
+console.log(mySet)
 }
 
 document.querySelector('.b-12').onclick = () => {
@@ -183,8 +192,19 @@ let str13 = 'The name conjures up visions of plum pudding and Christmas punch qu
 
 
 const f13 = () => {
-
-    // return
+    let arr = Array.from(str13);
+    let myArr = new Set(arr);
+    let myObj = {};
+    for(key of myArr) {
+        let value = 1;
+        for(let i = 0; i < arr.length; i++) {
+            if( key == arr[i]){
+                value += 1;
+            }
+            myObj[key] = value;
+        }
+    }
+    return myObj
 }
 
 document.querySelector('.b-13').onclick = () => {
