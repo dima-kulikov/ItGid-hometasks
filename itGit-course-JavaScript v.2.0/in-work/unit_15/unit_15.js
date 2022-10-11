@@ -176,7 +176,8 @@ let str12 = 'The name conjures up visions of plum pudding and Christmas punch qu
 const f12 = () => {
     let arr = Array.from(str12);
     let mySet = new Set(arr)
-console.log(mySet)
+
+    return mySet;
 }
 
 document.querySelector('.b-12').onclick = () => {
@@ -204,6 +205,7 @@ const f13 = () => {
             myObj[key] = value;
         }
     }
+    console.log(myObj)
     return myObj
 }
 
