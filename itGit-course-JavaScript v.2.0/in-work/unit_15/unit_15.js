@@ -197,7 +197,7 @@ const f13 = () => {
     let myArr = new Set(arr);
     let myObj = {};
     for(key of myArr) {
-        let value = 1;
+        let value = 0;
         for(let i = 0; i < arr.length; i++) {
             if( key == arr[i]){
                 value += 1;
