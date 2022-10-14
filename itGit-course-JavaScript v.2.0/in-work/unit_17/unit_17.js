@@ -191,8 +191,17 @@ document.querySelector('.b-9').onclick = () => {
 let a10 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t10() {
+let out = [];
 
+    a10.forEach( el => {
+        if( el < 0) {
+            el = 0;
+        };
+        out.push(el);
+    });
+    a10 = out;
 
+    return a10;
 }
 
 document.querySelector('.b-10').onclick = () => {
@@ -206,7 +215,8 @@ let a11 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t11() {
 
-
+    a11_res = a11.filter( (el, index) => index % 2 == 0);
+    return a11_res;
 }
 
 document.querySelector('.b-11').onclick = () => {
@@ -221,6 +231,7 @@ let a12 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t12() {
 
+   return Array.isArray(a12);
 
 }
 
@@ -237,6 +248,7 @@ let a13_num = 9;
 
 function t13() {
 
+ return   a13.includes(a13_num);
 
 }
 
@@ -253,7 +265,11 @@ let a14_sym = 'e';
 
 function t14() {
 
+    a14 = a14.map( el =>{
+        return el.toLowerCase();
+    }); 
 
+    return   a14.includes(a14_sym.toLowerCase());
 }
 
 document.querySelector('.b-14').onclick = () => {
@@ -298,6 +314,9 @@ let a15 = [
 
 function t15() {
 
+    a15_res = a15.filter( el => el.pnum.length > 0 && el.pnum.length == 6);
+
+    return a15_res;
 
 }
 
