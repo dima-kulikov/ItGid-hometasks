@@ -4,6 +4,9 @@
 
 function t1(event) {
     console.log(event);
+
+    document.querySelector('.out-1').innerHTML = event.key;
+    return event.key;
 }
 
 document.querySelector('.i-1').onkeydown = t1;
@@ -14,6 +17,7 @@ document.querySelector('.i-1').onkeydown = t1;
 function t2(event) {
     console.log(event);
 
+    document.querySelector('.out-2').innerHTML = event.keyCode;
 }
 
 document.querySelector('.i-2').onkeypress = t2;
@@ -24,6 +28,11 @@ document.querySelector('.i-2').onkeypress = t2;
 
 function t3(event) {
 
+    if( event.keyCode >= 48 && event.keyCode <= 57) {
+        document.querySelector('.out-3').innerHTML = false;
+    }else{
+        document.querySelector('.out-3').innerHTML = true;
+    }
 }
 
 document.querySelector('.i-3').onkeypress = t3;
@@ -31,29 +40,41 @@ document.querySelector('.i-3').onkeypress = t3;
 
 // Task 4 ============================================
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. Т.е. ввели ab4Bci в out-4 получаем ab4ci. */
-
+let out4 = '';
 function t4(event) {
-    console.log(event.keyCode);
+    console.log(event.keyCode); //32
 
+     out4 += (event.key).toLowerCase();
+    document.querySelector('.out-4').innerHTML = out4;
 }
 
 document.querySelector('.i-4').onkeypress = t4;
 
 // Task 5 ============================================
 /*  Дан input .i-5. Напишите функцию t5, которая выводит в .out-5 все вводимые символы в верхнем регистре. Т.е. пользователь ввел AbCd и функция выведет ABCD. */
-
+let out5 = '';
 function t5(event) {
     console.log(event);
 
+    out5 += (event.key).toUpperCase();
+    document.querySelector('.out-5').innerHTML = out5;
 }
 
 document.querySelector('.i-5').onkeydown = t5;
 
 // Task 6 ============================================
 /*  Дан input .i-6. Напишите функцию t6, которая позволяет вводить в i-6 только символы в нижнем регистре. Т.е. мы до функции создаем строку. Внутри функции проверяем код символа. Если символ - в нижнем регистре - добавляем в строку. Потом принудительно присваиваем строку в value input i-6. Чтобы блокировать стандартный вывод в input в конце функции пишем return false;  */
+let out6 = '';
 
 function t6() {
-    // return false;
+    console.log(event);
+
+if(event.key === event.key.toLowerCase()){
+    out6 += event.key;
+    document.querySelector('.i-6').value = out6;
+}else{
+    return false;
+}
 }
 
 document.querySelector('.i-6').onkeypress= t6;
