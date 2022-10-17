@@ -21,9 +21,7 @@ document.querySelector('.b-1').onclick = t1;
 function t2() {
     let a1 = [2,3,4,5,10,11,12];
     a1.forEach( el => {
-        if(el % 2 == 0){
-            a2_res.push(el);
-        };
+            a2_res.push(el / 2);
     });
     document.querySelector('.out-2').innerHTML = a2_res;
 }
