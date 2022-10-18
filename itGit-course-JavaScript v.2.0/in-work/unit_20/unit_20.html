@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
     <link rel="stylesheet" href="style.css">
-    
+
     <link rel="shortcut icon" href="https://cabinet.itgid.info/favicon.svg" type="image/x-icon">
     <title>Unit 20</title>
 </head>
@@ -59,7 +59,9 @@
 
         <section>
             <p><b>Task 6.</b></p>
-            <p>  Дан input .i-6. Напишите функцию t6, которая позволяет вводить в i-6 только символы в нижнем регистре. Т.е. мы до функции создаем строку. Внутри функции проверяем код символа. Если символ - в нижнем регистре - добавляем в строку. Потом принудительно присваиваем строку в value input i-6. Чтобы блокировать стандартный вывод в input в конце функции пишем return false;   </p>
+            <p> Дан input .i-6. Напишите функцию t6, которая позволяет вводить в i-6 только символы в нижнем регистре. Т.е. мы до функции создаем строку. Внутри функции проверяем
+                код символа. Если символ - в нижнем регистре - добавляем в строку. Потом принудительно присваиваем строку в value input i-6. Чтобы блокировать стандартный вывод в
+                input в конце функции пишем return false; </p>
             <div>
                 <input type="text" class="i-6">
         </section>
@@ -97,7 +99,8 @@
 
         <section>
             <p><b>Task 10.</b></p>
-            <p>Дан input .i-10 и блок block-10. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину блока. Клавиши стрелка вверх и вниз - увеличивать высоту блока. Одно нажатие клавиши - 1px.</p>
+            <p>Дан input .i-10 и блок block-10. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину блока. Клавиши стрелка вверх и вниз
+                - увеличивать высоту блока. Одно нажатие клавиши - 1px.</p>
             <div>
                 <input type="text" class="i-10">
                 <div class="div-10 block-10">
@@ -108,7 +111,8 @@
         <section>
             <p><b>Task 11.</b></p>
             <p>1. Изучите верстку клавиатуры.</p>
-            <p>2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым фоном. Перед поиском и присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.</p>
+            <p>2. При вводе символа в i-11 ( латиница, нижний регистр) - клавише с таким символом присвойте класс .active. Это окрасит клавишу оранжевым фоном. Перед поиском и
+                присвоением active, с помощью цикла удалите класс active у всех клавиш с классом keyboard.</p>
             <p>3. Если все сделано верно, то при вводе следующего символа, предыдущая клавиша потеряет оранжевый фон, а новая введенная окрасится. </p>
             <p>4. Самостоятельно добавьте все цифры и второй ряд клавиш от a до l</p>
             <p>5. Самостоятельно добавьте клавишу alt, enter.</p>
@@ -117,15 +121,48 @@
 
                 <input type="text" class="i-11">
                 <div class="out-11">
+                    <div class="keyboard" data="1">1</div>
+                    <div class="keyboard" data="2">2</div>
+                    <div class="keyboard" data="3">3</div>
+                    <div class="keyboard" data="4">4</div>
+                    <div class="keyboard" data="5">5</div>
+                    <div class="keyboard" data="6">6</div>
+                    <div class="keyboard" data="7">7</div>
+                    <div class="keyboard" data="8">8</div>
+                    <div class="keyboard" data="9">9</div>
+                    <div class="keyboard" data="0">0</div>
+                </div>
+                <div class="out-11">
                     <div class="keyboard" data="q">q</div>
                     <div class="keyboard" data="w">w</div>
                     <div class="keyboard" data="e">e</div>
                     <div class="keyboard" data="r">r</div>
-                    <div class="keyboard" data="1">1</div>
-                    <div class="keyboard" data="2">2</div>
-                    <div class="keyboard" data="3">3</div>
+                    <div class="keyboard" data="t">t</div>
+                    <div class="keyboard" data="y">y</div>
+                    <div class="keyboard" data="u">u</div>
+                    <div class="keyboard" data="i">i</div>
+                    <div class="keyboard" data="o">o</div>
+                    <div class="keyboard" data="p">p</div>
+                    <div class="keyboard" data="[">[</div>
+                    <div class="keyboard" data="]">]</div>
                     <div class="keyboard" data="space">space</div>
                     <div class="keyboard" data="ctrl">ctrl</div>
+                </div>
+                <div class="out-11">
+                    <div class="keyboard" data="a">a</div>
+                    <div class="keyboard" data="s">s</div>
+                    <div class="keyboard" data="d">d</div>
+                    <div class="keyboard" data="f">f</div>
+                    <div class="keyboard" data="g">g</div>
+                    <div class="keyboard" data="h">h</div>
+                    <div class="keyboard" data="j">j</div>
+                    <div class="keyboard" data="k">k</div>
+                    <div class="keyboard" data="l">l</div>
+                    <div class="keyboard" data=";">;</div>
+                    <div class="keyboard" data="'">'</div>
+                    <div class="keyboard" data="\">\</div>
+                    <div class="keyboard" data="Alt">Alt</div>
+                    <div class="keyboard" data="Enter">Enter</div>
                 </div>
         </section>
 
@@ -141,7 +178,7 @@
 
 
     </div>
-    
+
     <script src="unit_20.js"></script>
 </body>
 
