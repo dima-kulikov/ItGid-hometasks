@@ -50,59 +50,76 @@ document.querySelector('.div-4').ondblclick = t4;
 /*  Дан блок .div-5.active. Добавьте на него событие двойной клик, по которому удалется класс active если он есть и добавляется если такого класса нет. */
 
 function t5() {
-
+    document.querySelector('.div-5').classList.toggle('active');
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-5').ondblclick = t5;
 // Task 6 ============================================
 /*  Дан блок .div-6 и список .ul-6. При двойном клике на блоке скрывайте .ul-6 еcли он показан и показывайте если скрыт. Скрытие и показ делайте через добавление - удаление класса .hide */
 
 function t6() {
-
+    document.querySelector('.ul-6').classList.toggle('hide');
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-6').ondblclick = t6;
 
 // Task 7 ============================================
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 
 function t7() {
 
-}
+    document.querySelector('.div-7').classList.toggle('active');
+return false;
+};
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-7').oncontextmenu = t7;
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
 function t8() {
+let myCheckbox = document.querySelector('.ch-8');
 
+    if (myCheckbox.checked) {
+        document.oncontextmenu = function () {
+            return false;
+         };
+    }else {
+    document.oncontextmenu = function () {
+        return true;
+     };
+    }
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.ch-8').onchange = t8
 
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
 function t9() {
+let changeImg = document.querySelector('.div-9 img');
+    
+    changeImg.src='img/2.png';
 
+return false;
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-9').oncontextmenu = t9;
 
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
-function t10() {
-
+function t10(e) {
+    console.log(e.target)
+    document.querySelector('.div-10 img').src='img/2.png';
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-10').addEventListener('mouseenter', t10);
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
 
