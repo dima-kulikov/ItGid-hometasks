@@ -4,8 +4,13 @@
 
 function t1() {
     // тут добавляете try
+    try{
     let a = 22;
     let c = a + d;
+    }
+    catch(err){
+        document.querySelector('.out-1').innerHTML = 1;
+    }
     // тут catch
     // .. и вывод
 }
