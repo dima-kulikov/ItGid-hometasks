@@ -40,77 +40,85 @@ document.querySelector('.div-3_2').addEventListener('touchstart', t3)
 /*  Создайте блок div-4. И кнопку b-4. При нажатии кнопки - добавляйте событие ontouchstart на блок div-4. При событии происходит вывод текста touch в out-4.  */
 
 function t4() {
-
+document.querySelector('.div-4').ontouchstart = () => {
+    document.querySelector('.out-4').innerHTML = 'touch';
+}
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.b-4').onclick = t4;
 // Task 5 ============================================
 /*  Дана кнопка b-5. При ее нажатии очищайте событие ontouchstart на блоке div-4. */
 
 function t5() {
-
+    document.querySelector('.div-4').ontouchstart = () => {
+        return false;
+    }
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.b-5').ontouchstart = t5;
 // Task 6 ============================================
 /*  Добавьте событие ontouchend на div-4. При его срабатывании выведите в out-6 слово touchend. */
 
 function t6() {
-
+document.querySelector('.out-6').innerHTML = 'touchend';
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-4').ontouchend = t6;
 
 // Task 7 ============================================
 /*  Дан блок div-7. Добавьте событие touch, при срабатывании которого окрашивайте блок в красный цвет. */
 
 function t7() {
-
+    document.querySelector('.div-7').style.backgroundColor = 'red';
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-7').addEventListener('touchstart', t7);
 // Task 8 ============================================
 /*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue, orange, pink, yellow] */
-
+let a8 = ['red', 'green', 'blue', 'orange', 'pink', 'yellow'];
 function t8() {
-
+let myColor = Math.floor(Math.random()* a8.length);
+document.querySelector('.div-8').style.backgroundColor = a8[myColor];
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-8').ontouchstart = t8;
 
 // Task 9 ============================================
 /* Дан блок div-9. Добавьте событие ontouch. Выводите количество одновременных касаний в out-9. */
 
-function t9() {
-
+function t9(e) {
+    console.log(e)
+console.log(e.touches.length)
+document.querySelector('.out-9').innerHTML = e.touches.length;
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-9').ontouchstart = t9;
 
 // Task 10 ============================================
 /*  Дан блок div-10. Добавьте на него событие touchmove. При срабатывании события - увеличивайте его ширину на 1. */
 
-function t10() {
-
+function t10(e) {
+    let blockWidth = e.target.offsetWidth;
+    document.querySelector('.div-10').style.width = `${blockWidth + 1}px `;
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-10').addEventListener('touchmove', t10);
 // Task 11 ============================================
 /*  Дан блок div-11. Добавьте на него событие touch. При срабатывании выводите радиус события radiusX, radiusY. */
 
-function t11() {
-
+function t11(e) {
+    document.querySelector('.out-11').innerHTML = `radiusX: ${e.targetTouches[0].radiusX}, radiusY: ${e.targetTouches[0].radiusY}`
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-11').ontouchstart = t11;
 // Task 12 ============================================
 /*  Мини проект. Ознакомьтесь с версткой в задании 12.
 <p>Изучите html код внутри div-12-wrapper.</p>
@@ -122,21 +130,52 @@ function t11() {
 */
 
 const images = document.querySelectorAll('.img-12-min');
+const imageMax = document.querySelector('.img-12-max');
 let count = 0; // переменная, которая указывает на номер активного изображения в images
-
 const next = document.querySelector('.next');
-next.onclick = nextFunction;
-
 const prev = document.querySelector('.prev');
+const reset = document.querySelector('.reset');
+
+next.onclick = nextFunction;
 prev.onclick = prevFunction;
+reset.onclick = resetFunction;
 
+//проверил, тоже работает
+// next.ontouchstart = nextFunction;
+// prev.ontouchstart = prevFunction;
+// reset.ontouchstart = resetFunction;
+
+//перенос рамки и замена главного фото вперед
 function nextFunction() {
-
+    count += 1;
+    removeActive()
+    if(count > 5) {
+        count = 0;
+    };
+    images[count].classList.add('active-img');
+    imageMax.src =  images[count].currentSrc;
 }
-
+//перенос рамки и замена главного фото назад
 function prevFunction() {
-
+    count -= 1;
+    removeActive()
+    if(count < 0) {
+        count = images.length - 1;
+    };
+    images[count].classList.add('active-img');
+    imageMax.src =  images[count].currentSrc;
 }
-
-
+// резет сбивает на первой фото
+function resetFunction() {
+    removeActive()
+    count = 0;
+    images[count].classList.add('active-img');
+    imageMax.src =  images[count].currentSrc;
+}
+// цикл который снимает рамку со всех изображений
+function removeActive() {
+    images.forEach(el => {
+        el.classList.remove('active-img')
+    })
+}
 // ваше событие здесь!!!
