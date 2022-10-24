@@ -3,6 +3,9 @@
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
 function t1() {
+    let xhtp = new XMLHttpRequest();
+
+    
 }
 
 // ваше событие здесь!!!
