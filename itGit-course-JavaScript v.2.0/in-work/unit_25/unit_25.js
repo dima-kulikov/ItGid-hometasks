@@ -3,13 +3,24 @@
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
 function t1() {
-    let xhtp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
 
-    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    };
+
+    xhttp.open('GET', "http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=1");
+    xhttp.send();
+
+    function myFunction(data){
+        document.querySelector('.out-1').innerHTML = data;
+    }
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.b-1').onclick = t1;
 // Task 2 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Выведите в out-2 результат. Запускаться функция должна по нажатию b-2. */
 
