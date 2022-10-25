@@ -114,39 +114,99 @@ document.querySelector('.b-5').onclick = t5;
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-6 результат. Запускаться функция должна по нажатию b-6. */
 
 function t6() {
+    let xttp = new XMLHttpRequest();
+
+    xttp.onreadystatechange = function() {
+        if( this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    };
+
+    xttp.open('GET', 'http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=6&num1=2&num2=15')
+    xttp.send();
+
+    function myFunction(data) {
+        document.querySelector('.out-6').innerHTML = data;
+    }
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-6').onclick = t6;
 
 
 // Task 7 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. */
 
 function t7() {
+    let xttp = new XMLHttpRequest();
+
+    xttp.onreadystatechange = function() {
+        if( this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    };
+
+    xttp.open('GET', 'http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=7')
+    xttp.send();
+
+    function myFunction(data) {
+        document.querySelector('.out-7').innerHTML = data;
+    }
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет ваш возраст. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-8 результат. Запускаться функция должна по нажатию b-8.*/
 
 function t8() {
+    let xttp = new XMLHttpRequest();
+
+    xttp.onreadystatechange = function() {
+        if( this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    };
+
+    xttp.open('GET', 'http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=8&year=1987')
+    xttp.send();
+
+    function myFunction(data) {
+        document.querySelector('.out-8').innerHTML = data;
+    }
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-8').onclick = t8;
 
 
 // Task 9 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-9 результат. Запускаться функция должна по нажатию b-9. */
 
 function t9() {
+    let xttp = new XMLHttpRequest();
+
+    xttp.onreadystatechange = function() {
+        if( this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    };
+
+    xttp.open('GET', 'http://getpost.itgid.info/index2.php?auth=7859d9d42a8834141d529577207c9596&action=9&m=1&d=1&y=1')
+    xttp.send();
+
+    function myFunction(data) {
+        document.querySelector('.out-9').innerHTML = data;
+    }
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-9').onclick = t9;
 
 
 // Task 10 ============================================
@@ -155,8 +215,24 @@ function t9() {
 */
 
 function t10() {
+let xttp = new XMLHttpRequest();
 
-}
+    xttp.onreadystatechange = function() {
+        if( this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText)
+        }
+    };
+    xttp.open('POST', 'http://getpost.itgid.info/index2.php');
+
+    xttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
+    xttp.send('auth=7859d9d42a8834141d529577207c9596&action=1');
+
+    function myFunction(data) {
+        document.querySelector('.out-10').innerHTML = data;
+    };
+};
+
+document.querySelector('.b-10').onclick = t10;
 // Task 11 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-11 результат. Запускаться функция должна по нажатию b-11. */
 
