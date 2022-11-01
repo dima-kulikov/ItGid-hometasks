@@ -6,9 +6,9 @@ class Valid {
     }
     validate() {
         if(this.password.length < 6) {
-            return false;
+            this.isValid = false;
         }else {
-            return true;
+            this.isValid = true;
         }
     }
 
