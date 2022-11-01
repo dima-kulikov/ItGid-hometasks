@@ -5,18 +5,21 @@ class Valid2 extends Valid {
         this.passwordError = ' ';
     }
     validate() {
-        if(this.password.length < 6) {
-            if( this.name == '') {
-                this.emaiError = 'email empty';
-            }
-            this.passwordError = 'min length 6';
-            this.isValid = false;
-        }else if( this.name == '') {
-            this.emaiError = 'email empty';
-            this.isValid = false;
-        }else {
-            this.isValid = true;
+        this.emaiError = ' ';
+        this.passwordError = ' ';
+        super.validate();
+
+        if (!this.isValid) {
+          this.passwordError = 'min length 6';
+          return this.isValid;
         }
-        
+       
+       if( this.name == '') {
+                this.emaiError = 'email empty';
+                this.isValid = false;
+                return this.isValid;
+      }
+      this.isValid = true;
+      return this.isValid;  
     }
 }

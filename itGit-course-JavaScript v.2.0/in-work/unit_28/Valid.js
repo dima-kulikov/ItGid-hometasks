@@ -5,11 +5,13 @@ class Valid {
         this.isValid = false;
     }
     validate() {
+        this.isValid = false;
         if(this.password.length < 6) {
             this.isValid = false;
-        }else {
-            this.isValid = true;
+            return this.isValid;
         }
+        this.isValid = true;
+        return this.isValid;
     }
 
 }

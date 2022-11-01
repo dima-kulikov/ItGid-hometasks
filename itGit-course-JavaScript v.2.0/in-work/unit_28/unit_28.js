@@ -1,7 +1,7 @@
  // Task 1
  // Создайте класс Goods. Класс должен содержать свойства name, amount. Создайте на его основе объект goods. Выведите в консоль созданный объект. Помните, все классы - в отдельных файлах. Имена классов с большой буквы.
 let goods = new Goods('banana', 25);
-console.log(goods)
+console.log(goods);
  
  //Task 2.
  //  Добавьте в класс Goods свойства image и count - картинка и количество на складе.
@@ -15,9 +15,9 @@ console.log(goods)
  // Создайте на основе класса Goods объект goods2, заполните свойства, примените метод draw для вывода товара на страницу в блок out-4.
  let goods2 = new Goods('banana', 25,'https://rabotu.net/f/glavnaja/surfebe.jpg', 5);
  let out4 = document.querySelector('.out-4');
-let div = document.createElement("div");
-div.innerHTML = goods2.draw();
-out4.append(div);
+ let div = document.createElement("div");
+ div.innerHTML = goods2.draw();
+ out4.append(div);
 
  //Task 5.
  // Создайте класс Goods2, который наследуется от Goods. Добавьте ему свойство sale равное true или false. Перезапишите метод draw так, чтобы он выводил информацию о распродажах.
@@ -25,8 +25,8 @@ out4.append(div);
 
  // Task 6.
  // Создайте на основе класса Goods2 объект goods3. Заполните все поля. Выведите товар на страницу с помощью метода draw. Вывод осуществить в out-6.
-let goods3 = new Goods2('banana', 55,'https://rabotu.net/f/glavnaja/surfebe.jpg', 17, 'trye');
-document.querySelector('.out-6').innerHTML = goods3.draw();
+ let goods3 = new Goods2('banana', 55,'https://rabotu.net/f/glavnaja/surfebe.jpg', 17, 'trye');
+ document.querySelector('.out-6').innerHTML = goods3.draw();
 
  // Task 7.
  // Создайте класс Valid, который содержит свойства email, password, isValid. И метод validate. Метод validate должен проверять длину пароля и писать false в isValid если длина меньше 6 и true если больше. Изначально свойство isValid равно false.
@@ -51,7 +51,6 @@ document.querySelector('.out-6').innerHTML = goods3.draw();
  let valid2 = new Valid2('', '652rfrrfggrg');
 
  console.log(valid2.validate())
- console.log(valid2.isValid)
  console.log(valid2)
  
  //Task 12.
@@ -59,5 +58,4 @@ document.querySelector('.out-6').innerHTML = goods3.draw();
  let valid3 = new Valid2('dwdw', '652rfrrfggrg');
 
  console.log(valid3.validate())
- console.log(valid3.isValid)
  console.log(valid3)
