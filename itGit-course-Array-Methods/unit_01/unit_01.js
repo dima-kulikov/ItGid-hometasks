@@ -170,6 +170,11 @@ let a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11];
 
 const f10 = (arr, elem) => {
     
+        for(let i = 0; i < arr.length; i++) {
+            if( arr[i] == elem){
+              return  document.querySelector('.out-10').innerHTML = arr.indexOf(arr[i]);
+            }
+        }
 }
 
 
