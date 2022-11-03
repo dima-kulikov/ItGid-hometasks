@@ -86,7 +86,10 @@ const f4 = () => {
 let a5 = [22, 33, 44, 55, 66, 77, 88, 33, 44, 55, 66, 77];
 
 const f5 = () => {
+let first = +document.querySelector('.i-5-1').value;
+let second = +document.querySelector('.i-5-2').value;
 
+document.querySelector('.out-5').innerHTML = a5.includes(first, second)
 }
 
 // TASK 06
@@ -97,6 +100,26 @@ const f5 = () => {
 let a6 = ['Hi', 'wiFI'];
 
 const f6 = () => {
+    let inputValue = document.querySelector('.i-6').value;
+    let out6 = document.querySelector('.out-6');
+    out6.innerHTML = a6.includes(inputValue);
+
+//     if(inputValue == ''){
+//        return false;
+//     }else{
+//     let secondArr = a6.filter( el => el.toLowerCase().includes(inputValue));
+
+//     console.log(secondArr)
+
+//     if(secondArr.length > 0){
+//         console.log(true)
+//         out6.innerHTML = true;
+//     }else{
+//         console.log(false)
+//         out6.innerHTML = false;
+//     }
+// }
+
 }
 
 // TASK 07
@@ -106,6 +129,14 @@ const f6 = () => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = (arr, elem) => {
+    
+    for(let i = 0; i < arr.length; i++) {
+        if(a7[i] == elem) {
+            return document.querySelector('.out-7').innerHTML = true;
+        }else{
+            document.querySelector('.out-7').innerHTML = false;
+        }
+    }
 }
 
 // TASK 08
@@ -115,6 +146,8 @@ const f7 = (arr, elem) => {
 let a8 = 'JSbestever';
 
 const f8 = () => {
+    let inputValue = document.querySelector('.i-8').value;
+    document.querySelector('.out-8').innerHTML = a8.includes(inputValue);
 }
 
 // TASK 09
@@ -127,7 +160,16 @@ const f8 = () => {
 let a9 = ['A', 'b', 'c', 'C', 'D', 12, 5, 'd', 1];
 
 const f9 = () => {
-    console.log('09');
+    let inputValue = document.querySelector('.i-9').value.toLowerCase();
+    let out9 = document.querySelector('.out-9');
+
+    for(let i = 0; i < a9.length; i++) {
+        if(String(a9[i]).toLowerCase() == inputValue){
+          return out9.innerHTML = true;
+        }else{
+            out9.innerHTML = false;
+        }
+    }
 }
 
 // TASK 10
@@ -154,13 +196,13 @@ const a11 = [[1, 2], { a: 1 }, true, '', [1], Infinity, undefined, null];
 
 const f11 = () => {
     let c = [1, 2];
-    // c = {a:1};
-    // c = true;
-    // c = '';
-    // c = [1];
-    // c = Infinity;
-    // c = undefined;
-    // c = null;
+    c = {a:1};
+    c = true;
+    c = '';
+    c = [1];
+    c = Infinity;
+    c = undefined;
+    c = null;
     console.log(a11.includes(c));
 }
 
