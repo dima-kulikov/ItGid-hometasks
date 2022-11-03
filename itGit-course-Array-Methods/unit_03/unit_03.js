@@ -5,7 +5,9 @@
 let a1 = ['hello', 't'];
 
 const f1 = () => {
-
+let inputValue = document.querySelector('.i-1').value;
+    a1.push(inputValue);
+    console.log(a1)
 }
 
 // TASK 02
@@ -14,7 +16,10 @@ const f1 = () => {
 let a2 = ['b', 'c', 12, 34, 'dh', 17];
 
 const f2 = () => {
+    let inputValue = +document.querySelector('.i-2').value;
 
+    a2.push(inputValue, Math.pow(inputValue, 3))
+    console.log(a2)
 }
 
 // TASK 03
@@ -24,9 +29,10 @@ const f2 = () => {
 let a3 = ['a', 'b'];
 
 const f3 = () => {
-    // ваш код
-    // console.log(a3.push(ваша переменная));
-    // console.log(a3);
+    let inputValue = +document.querySelector('.i-3').value;
+
+    console.log(a3.push(inputValue));
+    console.log(a3);
 }
 
 // TASK 04
@@ -37,7 +43,8 @@ let a4 = [1, 2];
 let a4_1 = [5,6];
 
 const f4 = () => {
-
+a4.push(a4_1);
+console.log(a4)
 }
 
 // TASK 05
@@ -47,7 +54,9 @@ const f4 = () => {
 let a5 = [55, 66, 77];
 
 const f5 = () => {
-
+    let inputValue = +document.querySelector('.i-5').value;
+    a5[a5.length] = inputValue;
+    console.log(a5)
 }
 
 // TASK 06
@@ -57,7 +66,9 @@ const f5 = () => {
 let a6 = ['a', 'b'];
 
 const f6 = (arr, elem) => {
-
+    
+    arr[arr.length] = elem;
+    return arr.length
 }
 
 // TASK 07
@@ -66,7 +77,8 @@ const f6 = (arr, elem) => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = () => {
-
+a7.pop();
+console.log(a7)
 }
 
 // TASK 08
@@ -77,6 +89,7 @@ const f7 = () => {
 let a8 = [99,98,97,96];
 
 const f8 = () => {
+   return a8.pop()
 }
 
 // TASK 09
@@ -85,6 +98,8 @@ const f8 = () => {
 let a9 = ['A', 2, true, function() {console.log(2)}, [2,3,4], {"test": 1}];
 
 const f9 = () => {
+    a9.pop();
+    console.log(a9)
 }
 
 // TASK 10
@@ -93,7 +108,10 @@ const f9 = () => {
 let a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11];
 
 const f10 = () => {
-
+    let out = a10[a10.length - 1]
+    a10.splice(a10.length - 1, 1);
+    return out;
+    
 }
 
 
