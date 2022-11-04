@@ -5,7 +5,12 @@
 let a1 = ['hello', 't'];
 
 const f1 = () => {
+let outValue = document.querySelector('.i-1').value;
 
+    a1.unshift(outValue);
+
+    console.log(a1);
+    return a1;
 }
 
 // TASK 02
@@ -14,7 +19,12 @@ const f1 = () => {
 let a2 = ['b', 'c', 12, 34, 'dh', 17];
 
 const f2 = () => {
+    let outValue = +document.querySelector('.i-2').value;
 
+    a2.unshift(outValue, Math.pow(outValue, 3));
+
+    console.log(a2);
+    return a2;
 }
 
 // TASK 03
@@ -24,9 +34,9 @@ const f2 = () => {
 let a3 = ['a', 'b'];
 
 const f3 = () => {
-    // ваш код
-    // console.log(a3.unShift(ваша переменная));
-    // console.log(a3);
+    let outValue = document.querySelector('.i-3').value;
+    console.log(a3.unshift(outValue));
+    console.log(a3);
 }
 
 // TASK 04
@@ -36,7 +46,8 @@ const f3 = () => {
 let a4 = [14, 15, 16, 17, 18];
 
 const f4 = () => {
-
+    a4.shift();
+    console.log(a4);
 }
 
 // TASK 05
@@ -45,7 +56,7 @@ const f4 = () => {
 let a5 = [55, 66, 77, 88, 99, 129];
 
 const f5 = () => {
-    // return a5.shift();
+    return a5.shift();
 }
 
 // TASK 06
@@ -55,6 +66,14 @@ const f5 = () => {
 let a6 = ['a', 'b', 'c', 'd', 'e', 'f'];
 
 const f6 = (elem) => {
+let firstArr = [];
+    
+    firstArr.push(elem);
+    out = firstArr.concat(a6);
+    a6 = out;
+
+    console.log(a6);
+    return a6.length;
 
 }
 
@@ -65,6 +84,10 @@ let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = () => {
 
+    a7.shift();
+    console.log(a7);
+    return a7.unshift();
+
 }
 
 // TASK 08
@@ -74,6 +97,9 @@ const f7 = () => {
 let a8 = [44, 45, 46, 47, 48, 49];
 
 const f8 = () => {
+    a8 = a8.slice(1, 4);
+
+    console.log(a8)
 }
 
 // TASK 09
@@ -82,15 +108,20 @@ const f8 = () => {
 let a9 = ['A', 2, 43, 12, 13, 14, 15, 16];
 
 const f9 = () => {
+    a9 = a9.slice(2);
+
+    console.log(a9)
 }
 
 // TASK 10
 // По нажатию b-10 выполняется функция f10. Функция должна применить slice с параметрами (2, -2) к массиву a10 и вывести массив в консоль.
 
-const a10 = [100, 2, 43, 12, 13, 14, 15, 16];
+let a10 = [100, 2, 43, 12, 13, 14, 15, 16];
 
 const f10 = () => {
-
+    
+    a10 = a10.slice(2, -2);
+    console.log(a10)
 }
 
 
@@ -111,4 +142,4 @@ document.querySelector('.b-7').addEventListener('click', () => {
 });
 document.querySelector('.b-8').addEventListener('click', f8);
 document.querySelector('.b-9').addEventListener('click', f9);
-document.querySelector('.b-10').addEventListener('click', f10());
+document.querySelector('.b-10').addEventListener('click', f10);
