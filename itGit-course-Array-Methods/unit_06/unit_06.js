@@ -7,6 +7,9 @@ let z1 = [];
 
 const f1 = () => {
 
+    z1 = a1.filter( el => el % 2 == 0);
+
+    console.log(z1)
 }
 
 // TASK 02
@@ -17,6 +20,9 @@ let z2 = [];
 
 const f2 = () => {
 
+    z2 = a2.filter( (el, index) => index % 2 == 0);
+
+    console.log(z2)
 }
 
 // TASK 03
@@ -28,6 +34,13 @@ let z3 = [];
 
 const f3 = () => {
 
+    z3 = a3.filter((el, index) => {
+        if( index > 4) {
+            return true;
+        }
+    });
+
+    console.log(z3)
 }
 
 // TASK 04
@@ -39,6 +52,13 @@ let z4 = [];
 
 const f4 = () => {
 
+    z4 = a4.filter( el => {
+        console.log(typeof el)
+        if(typeof el == 'string') {
+            return true;
+        }
+    })
+    console.log(z4)
 }
 
 // TASK 05
