@@ -53,7 +53,6 @@ let z4 = [];
 const f4 = () => {
 
     z4 = a4.filter( el => {
-        console.log(typeof el)
         if(typeof el == 'string') {
             return true;
         }
@@ -68,7 +67,14 @@ let a5 = [[4, 5], [6, 7, 8], [12, 5], [47, 3, 54, 62], [5]]; // ожидаю [[4
 let z5 = [];
 
 const f5 = () => {
-
+z5 = a5.filter( el => {
+    for(let i = 0; i < el.length; i++) {
+        if( el[i] == 5){
+            return el;
+        } 
+    }
+})
+console.log(z5)
 }
 
 // TASK 06
@@ -79,6 +85,17 @@ let z6 = [];
 
 const f6 = () => {
 
+    z6 = a6.filter( el => {
+        let sum = 0;
+        for( let i = 0; i < el.length; i++) {
+            sum += el[i];
+        };
+        if( sum % 2 == 0){
+            return true;
+        }
+    })
+
+    console.log(z6)
 }
 
 // TASK 07
@@ -95,6 +112,13 @@ let z7 = [];
 
 const f7 = () => {
 
+    z7 = a7.filter(el => {
+        if( el.pass.length <= 6){
+            return true;
+        }
+    });
+
+    console.log(z7)
 }
 
 // TASK 08
@@ -106,6 +130,16 @@ let z8_2 = [];
 
 const f8 = () => {
 
+    z8 = a8.filter((el, index) => {
+        if( index % 2 == 0) {
+            return true;
+        }else{
+            z8_2.push(el);
+        };
+    });
+
+    console.log(z8);
+    console.log(z8_2);
 }
 
 // TASK 09
@@ -115,6 +149,12 @@ let a9 = [6, 7, 9];
 let z9 = {}; // {6 : 6, 7: 7, 9: 9}
 
 const f9 = () => {
+
+        for(let i = 0; i < a9.length; i++) {
+            z9[a9[i]] = a9[i];
+        }
+
+    console.log(z9)
 }
 
 // TASK 10
@@ -125,11 +165,16 @@ let z10 = {}; // ожидаю {"best" : 12, "quest" : -6};
 
 const f10 = () => {
 
+    for(key in a10) {
+        if(callback10(a10[key]) > 5){
+            z10[key] = a10[key];
+        };
+    }
+    console.log(z10)
 }
 
 function callback10(elem) {
-    // ваш код
-    // return
+    return Math.abs(elem) 
 }
 
 
