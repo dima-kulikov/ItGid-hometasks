@@ -18,7 +18,18 @@ let a2 = [22, 33, 44, 55, 66, 77, 88, 99];
 // a2 = new Set([2,3]);
 
 const f2 = () => {
+    let out = false;
 
+for(let i = 0; i < a2.length; i++){
+    if(typeof a2[i] === 'number'){
+        out = true;
+    }else{
+        out = false;
+       
+    }
+}
+
+document.querySelector('.out-2').innerHTML = out;
 }
 
 // TASK 03
@@ -58,7 +69,11 @@ const f4 = () => {
 let a5 = [2, 3, 4, 5, 6];
 
 const f5 = () => {
-    // let res = a5.reduce((accum, item) => {
+    let res = a5.reduce((accum, item) => {
+        return accum += item;
+    });
+
+    document.querySelector('.out-5').innerHTML = res;
 }
 
 // TASK 06
@@ -67,7 +82,10 @@ const f5 = () => {
 let a6 = [2, 3, 4];
 
 const f6 = () => {
-    // let res = a6.reduce((accum, item) => {
+    let res = a6.reduce((accum, item) => {
+        return accum = accum * item; 
+    })
+    document.querySelector('.out-6').innerHTML = res;
 }
 
 // TASK 07
@@ -76,7 +94,14 @@ const f6 = () => {
 let a7 = [3, -4, 5, -6, 7]; // результат 15
 
 const f7 = () => {
-    // let res = a7.reduce((accum, item) => {
+    let res = a7.reduce((accum, item) => {
+        if(item > 0) {
+            return accum += item;
+        }
+        return accum
+    });
+
+    document.querySelector('.out-7').innerHTML = res;
 }
 
 // TASK 08
@@ -85,9 +110,15 @@ const f7 = () => {
 let a8 = [-2, 3, -4, 5, -6, 7]; // результат 15
 
 const f8 = () => {
-    // let res = a8.reduce((accum, item) => {
-}
+    let res = a8.reduce((accum, item) => {
+        if(item > 0) {
+            return accum += item;
+        }
+        return accum
+    }, 0);
 
+    document.querySelector('.out-8').innerHTML = res;
+}
 // TASK 09
 // По нажатию b-9 выполняется функция f9. Функция перебирает с помощью reduce массив и перемножает все числа больше нуля. Результат - произведение положительных элементов массива выводится в out-9. 
 
