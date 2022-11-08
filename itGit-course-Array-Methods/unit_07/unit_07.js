@@ -125,6 +125,13 @@ const f8 = () => {
 let a9 = [-2, 3, -4, 5, -6, 7]; // 105
 
 const f9 = () => {
+    let res = a9.reduce((accum, item) => {
+        if(item > 0){
+            return accum = accum * item;
+        }
+        return accum;
+    },1);
+    document.querySelector('.out-9').innerHTML = res;
 }
 
 // TASK 10
@@ -133,7 +140,24 @@ const f9 = () => {
 let a10 = [-2, 3, -4, 5, -6, 7];  // [15,-12]
 
 const f10 = () => {
-    // let res = a10.reduce( (accum, item) => {
+    let firsr = 0;
+    let second = 0;
+    let res = a10.reduce( (accum, item) => {
+        accum = [];
+        if(item > 0) {
+            firsr +=  item;
+        }else {
+        second += item;
+        }
+          accum.push(firsr);
+          accum.push(second);
+
+          return accum;
+    }, 0);
+
+    // console.log(firsr)
+    // console.log(second)
+   
     document.querySelector('.out-10').innerHTML = res;
 }
 
@@ -143,7 +167,14 @@ const f10 = () => {
 let a11 = [-2, 3, 14, 5, -6, 7];  // 14
 
 const f11 = () => {
-    // let res = a11.reduce((accum, item) => {
+    let res = a11.reduce((accum, item) => {
+        if( item > accum){
+            return accum = item;
+        };
+        return accum;
+    });
+
+    document.querySelector('.out-11').innerHTML = res;
 }
 
 // TASK 12
@@ -152,7 +183,14 @@ const f11 = () => {
 let a12 = [-2, 3, 14, 15, -6, 7];
 
 const f12 = () => {
-    // let res = a12.reduce(
+    let res = a12.reduce((accum, item) => {
+        if( item > accum){
+            return accum = item;
+        };
+        return accum;
+    });
+    res = a12.indexOf(res);
+
     document.querySelector('.out-12').innerHTML = res;
 }
 
@@ -162,7 +200,14 @@ const f12 = () => {
 let a13 = [[4, 4, 4], [4, 4], [4, 4, 4, 4], [4], [4, 4]];
 
 const f13 = () => {
-    // let res = a13.reduce((accum, item) => 
+    let res = a13.reduce((accum, item) => {
+        if(item.length > accum) {
+           return accum = item.length;
+        }
+        return accum;
+    }, 0);
+
+    document.querySelector('.out-13').innerHTML = res;
 }
 
 // TASK 14
@@ -171,7 +216,13 @@ const f13 = () => {
 let a14 = [[4, 4, 4], [4, 4], [4, 4, 4, 4], [4], [4, 4]];
 
 const f14 = () => {
-    // let res = 
+    let res = a14.reduce((accum, item) => {
+        if(item.length > accum.length) {
+           return accum = item;
+        }
+        return accum;
+    });
+
     document.querySelector('.out-14').innerHTML = res;
 }
 
@@ -181,7 +232,12 @@ const f14 = () => {
 let a15 = [0, 0, 1, 1, 1, 0, 2, 2, 3, 3, 3, 4, 5, 5, 6, 4, 4, 3, 1, 1, 0, 0, -1];
 
 const f15 = () => {
-    // let res = a15.reduce((accum, item) => 
+    let res = a15.reduce((accum, item) => {
+        return accum += item;
+    })
+    let lengthArr = a15.length;
+    res = res / lengthArr;
+
     document.querySelector('.out-15').innerHTML = res;
 }
 
@@ -197,7 +253,22 @@ let a16 = [
 // Ожидаю объект вида  { 45 : "Ivar", 464 : "Astor", 17 : "Bristol" }
 
 const f16 = () => {
+    let myObj = {};
+    let outFunction = '';
 
+let out = a16.reduce((accum, item) => {
+    // console.log(item);
+    myObj[item.id] = item.name;
+}, 0)
+// console.log(myObj);
+
+ for(key in myObj) {
+    // console.log(key)
+    outFunction += ` ${key} ${myObj[key]} <br> `;
+ }
+
+//  console.log(outFunction);
+document.querySelector('.out-16').innerHTML = outFunction;
 }
 
 // TASK 17
@@ -212,9 +283,30 @@ let a17 = {
 let a17_res = [];
 
 const f17 = () => {
+let out = '';
 
+
+// Вариант решения - 1 
+    // for(key in a17) {
+    //     a17_res.push(a17[key])
+    //     out += a17[key] + ' ';
+    // }
+
+
+
+// Вариант решения - 2
+
+let myArr =  Object.entries(a17);
+let arrReduce = myArr.reduce((accum, item) => {
+    a17_res.push(item[1])
+}, '');
+out = a17_res.reduce((accum, item) => {
+    return accum += item + ' ';
+}, '')
+
+
+document.querySelector('.out-17').innerHTML = out;
 }
-
 // TASK 18
 // По нажатию b-18 выполняется функция f18. Функция должна вывести в out-18 массив a18 в формате ключ пробел значение перенос строки. Для формирования строки для вывода используйте reduce. 
 
@@ -223,7 +315,20 @@ a18[100] = 67;
 a18[2000] = 15;
 
 const f18 = () => {
-    // let res = a18.reduce((accum, item, index) => 
+    out = {};
+    let myOut = ''
+
+    let res = a18.reduce((accum, item, index) => {
+        if( item !== '') {
+          return  out[index] = item;
+        }
+    }, 0);
+
+    for(key in out) {
+        myOut += key + ' ' + out[key] + ' ' + '<br>';
+    };
+
+    document.querySelector('.out-18').innerHTML = myOut;
 }
 
 // TASK 19
@@ -232,8 +337,11 @@ const f18 = () => {
 let a19 = 'hello';
 
 const f19 = () => {
-    // let res = a19.split('').reduce((accum, item) 
-    // document.querySelector('.out-19').innerHTML = res;
+    let res = a19.split('').reduce((accum, item, index) => {
+       return accum += index + ' ' + item + '<br>';
+    }, '')
+    // console.log(res)
+    document.querySelector('.out-19').innerHTML = res;
 }
 
 // TASK 20
@@ -242,7 +350,10 @@ const f19 = () => {
 let a20 = [4, 5, 6];
 
 const f20 = () => {
-    // let res = a19.split('').reduce((accum, item) => {
+    let res = a20.reduce((accum, item) => {
+        return accum = item + ' ' + accum;
+    }, '');
+    document.querySelector('.out-20').innerHTML = res;
     // res = [6,5,4]
 }
 
