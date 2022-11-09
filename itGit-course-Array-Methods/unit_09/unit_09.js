@@ -8,7 +8,13 @@ let a1_to = 27;
 // ожидаю 26, но вы протестируйте и на других
 
 const f1 = () => {
+let out =a1.find( el => {
+    if( el > a1_from && el< a1_to) {
+        return true;
+    }
+});
 
+document.querySelector('.out-1').innerHTML = out;
 }
 
 
@@ -21,6 +27,17 @@ let a2_to = 27;
 
 const f2 = () => {
 
+    let out = a2.find( el => {
+            if( el > a2_from && el< a2_to) {
+             return true;
+            }
+        });
+            if(out == undefined){
+                out = false;
+            }
+
+    
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 // TASK 03
@@ -32,7 +49,10 @@ let a3_to = 25;
 let a3_res = [];
 
 const f3 = () => {
+    a3_res = a3.filter( el => el > a3_from && el < a3_to);
 
+    console.log(a3_res)
+    document.querySelector('.out-3').innerHTML = a3_res[0];
 }
 
 // TASK 04
@@ -44,7 +64,16 @@ let a4_from = 'k';
 let a4_to = 't';
 
 const f4 = () => {
+    let b = str4.split('');
+    // console.log(b)
 
+    out = b.find( el => {
+        if(el > a4_from && el < a4_to){
+            return true;
+        }
+    });
+
+    document.querySelector('.out-4').innerHTML = out;
 } 
 
 // TASK 05
@@ -55,6 +84,7 @@ let a5_from = 23;
 let a5_to = 67; 
 
 const f5 = () => {
+
 }
 
 // TASK 06
