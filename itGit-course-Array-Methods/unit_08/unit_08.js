@@ -93,15 +93,15 @@ const f5 = (ar1, ar2) => {
 
 
 // для примера я написал 1, но тестировать буду с любым количеством
-const f6 = (arg1) => {
-    console.log(this)
-    let res =[];
-        for (let i = 0; i < arguments.length; i++) {
-          res.push(arguments[i]);
-        }
+const f6 = (...arg1) => {
+    
+    let out = arg1.reduce((accum, item) => {
+    
+    return accum.concat(item);
 
-          // не работает !!!!!!!
-      console.log(res)
+    });
+
+    return out
 }
 
 // TASK 07
@@ -110,6 +110,12 @@ const f6 = (arg1) => {
 let a7 = [3, -4, 5, -6, 7, 45, 67];
 
 const f7 = () => {
+    a7.splice(2, 3);
+
+    let out = a7.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    document.querySelector('.out-7').innerHTML = out;
 }
 
 // TASK 08
@@ -120,6 +126,13 @@ n8 = 4;
 k8 = 3;
 
 const f8 = () => {
+    a8.splice(k8, n8);
+
+    
+    let out = a8.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    document.querySelector('.out-8').innerHTML = out;
 }
 
 // TASK 09
@@ -128,6 +141,12 @@ const f8 = () => {
 let a9 = [-2, 3, -4, 5, -6, 7]; // 105
 
 const f9 = () => {
+    a9.splice(0, 3, 7,8);
+
+    let out = a9.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 // TASK 10
@@ -140,6 +159,42 @@ let add = [999, 1000]
 
 // что хочу получить в результате работы функции - [-2, 3, 999,1000,  7]
 const f10 = (arr, from, num, add) => {
+
+    // Вариант -----1-----
+    // let myArr = [];
+    // for(let i = 0; i < from; i++) {
+    //     myArr.push(arr[i]);
+    // };
+  
+    // for( let i = 0; i < add.length; i++) {
+    //     myArr[from] = add[i];
+    //     from = from + 1;
+    // }
+    // let rightArr = from + num - 2;
+
+    // for(let i = rightArr; i < arr.length; i++) {
+    //     myArr.push(arr[i]);
+    // };
+
+    // console.log(myArr);
+    // return myArr;
+
+
+    ////Вариант ---2----
+    let pushArr = []
+    
+    let first = arr.splice(0, from);
+    pushArr = pushArr.concat(first)
+
+    for( let i = 0; i < add.length; i++) {
+        pushArr[from] = add[i];
+        from = from + 1;
+    }
+
+    let second = arr.splice(num);
+    pushArr = pushArr.concat(second)
+
+    return pushArr;
 }
 
 
