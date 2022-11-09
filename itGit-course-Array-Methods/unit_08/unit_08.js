@@ -7,6 +7,13 @@ let a1_1 = [55, 66, 77];
 let a1_res;
 
 const f1 = () => {
+    a1_res = a1.concat(a1_1);
+
+    out = a1_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+
+    document.querySelector('.out-1').innerHTML = out;
 }
 
 // TASK 02
@@ -17,7 +24,9 @@ let a2_1 = 'best';
 let a2_res;
 
 const f2 = () => {
+    a2_res = a2.concat(a2_1);
 
+    document.querySelector('.out-2').innerHTML =  a2_res;
 }
 
 // TASK 03
@@ -29,7 +38,9 @@ let a3_1 = [5, 7];
 let a3_res;
 
 const f3 = () => {
+ a3_res = a3.concat(a3_1);
 
+ document.querySelector('.out-3').innerHTML = a3_res;
 }
 
 // TASK 04
@@ -41,12 +52,40 @@ let a4_1 = 'prime';
 let a4_res;
 
 const f4 = () => {
+    a4_res = a4.concat(a4_1);
+
+    out = a4_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-4').innerHTML = out;
 }
 
 // TASK 05
 // Напишите функцию f5 эмулятор concat. Функция должна принимать два аргумента массива и возвращать новый массив объединенный из этих двух. 
 
 const f5 = (ar1, ar2) => {
+  /// вариант ----1-----
+    // let out = ar1;
+    // for(let i = 0; i < ar2.length; i++) {
+    //     out.push(ar2[i])
+    // }
+    // console.log(out)
+    // return out;
+
+    ///- вариант ------2-----
+    // let out = ar2.forEach(el => {
+    //     ar1.push(el)
+    // });
+    // return ar1
+
+    /// вариант -----3-----
+    let out = ar2.reduce((accum, item) => {
+        ar1.push(item);
+        accum = ar1;
+        return accum;
+    }, '');
+    return out;
 }
 
 // TASK 06
@@ -55,6 +94,14 @@ const f5 = (ar1, ar2) => {
 
 // для примера я написал 1, но тестировать буду с любым количеством
 const f6 = (arg1) => {
+    console.log(this)
+    let res =[];
+        for (let i = 0; i < arguments.length; i++) {
+          res.push(arguments[i]);
+        }
+
+          // не работает !!!!!!!
+      console.log(res)
 }
 
 // TASK 07
