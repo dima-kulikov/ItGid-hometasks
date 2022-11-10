@@ -65,7 +65,6 @@ let a4_to = 't';
 
 const f4 = () => {
     let b = str4.split('');
-    // console.log(b)
 
     out = b.find( el => {
         if(el > a4_from && el < a4_to){
@@ -84,7 +83,13 @@ let a5_from = 23;
 let a5_to = 67; 
 
 const f5 = () => {
+let out = a5.findIndex( el => {
+    if( el > a5_from && el < a5_to) {
+        return true;
+    };
+})
 
+    document.querySelector('.out-5').innerHTML = out;
 }
 
 // TASK 06
@@ -96,6 +101,9 @@ let a6_from = 23;
 let a6_to = 67; 
 
 const f6 = () => {
+// хрен знает как решать !
+   
+
 }
 
 // TASK 07
@@ -106,6 +114,10 @@ let str7 = 'cccaBCcbBDabBddcCadcDbACacbbCdbBCADBDBdaAdcCd';
 let a7_1 = 'C'; // 43
 
 const f7 = () => {
+    let my7 = str7.split('');
+    let out = my7.lastIndexOf( a7_1);
+
+    document.querySelector('.out-7').innerHTML = out;
 }
 
 // TASK 08
@@ -115,6 +127,14 @@ let str8 = 'C#CdABd$d@$Ab!#@#bcAaB@c$D#@AD$A!b#!D!BB@CaAD@###@';
 let a8_1 = 'a'; // 43 ожидаю и на a и на A
 
 const f8 = () => {
+    let my8 = str8.split('');
+    let lowerArr = my8.map(el => el.toLowerCase())
+    console.log(lowerArr)
+    let out = lowerArr.lastIndexOf(a8_1);
+
+    // console.log(out)
+    document.querySelector('.out-8').innerHTML = out;
+
 }
 
 // TASK 09
@@ -124,6 +144,10 @@ let a9 = ['2', '17', '45', '5', '14', '5', '45', '107'];
 let a9_1 = '5'; // ожидаю индекс 5
 
 const f9 = () => {
+    let out = a9.lastIndexOf(a9_1);
+
+    // console.log(out)
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 // TASK 10
@@ -134,6 +158,18 @@ let a11 = [0,4,22];
 let a10_res = []; // ожидаю [-2, -6];
 
 const f10 = () => {
+
+    for(let i = 0; i < a11.length; i++) {
+        if( a10[a11[i]] !== undefined) {
+            a10_res.push(a10[a11[i]])
+        }
+    };
+
+    let out = a10_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+
+    document.querySelector('.out-10').innerHTML = out;
 }
 
 
