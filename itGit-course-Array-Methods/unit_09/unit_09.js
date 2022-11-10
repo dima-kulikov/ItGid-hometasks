@@ -101,8 +101,23 @@ let a6_from = 23;
 let a6_to = 67; 
 
 const f6 = () => {
-// хрен знает как решать !
+
+   let reversArr = a6.reverse();
    
+   let find = reversArr.findIndex(el => {
+    if(el > a6_from && el < a6_to) {
+        return true;
+    };
+   });
+
+
+   let out = a6.length - find - 1;
+
+   if( find == -1){
+    out = false;
+   }
+
+document.querySelector('.out-6').innerHTML = out;
 
 }
 
