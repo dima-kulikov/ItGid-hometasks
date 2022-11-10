@@ -6,6 +6,13 @@ let a1 = [22, 33, 44, 55, 66, 77, 88];
 
 const f1 = () => {
 
+    a1.reverse();
+
+    let out = a1.reduce((accum, index) => {
+        return accum += index + ' ';
+    }, '');
+
+    document.querySelector('.out-1').innerHTML = out;
 }
 
 
@@ -15,7 +22,15 @@ const f1 = () => {
 let s2 = 'mazahackercrackall';
 
 const f2 = () => {
+    let myArr = s2.split('')
 
+    myArr.reverse();
+
+    let out = myArr.reduce((accum, index) => {
+        return accum += index
+    })
+
+document.querySelector('.out-2').innerHTML = out;
 }
 
 // TASK 03
@@ -25,7 +40,17 @@ const f2 = () => {
 let a3 = [[44, 55, 66], [77, 88, 99]]; // ожидаю 66 55 44 99 88 77
 
 const f3 = () => {
+let a3_res = '';
 
+let myRevers = a3.map( el => el.reverse())
+
+    for(let i = 0; i < myRevers.length; i++){
+        for(let k = 0; k < myRevers[i].length; k++) {
+            a3_res += myRevers[i][k] + ' ';
+        }
+    }
+
+document.querySelector('.out-3').innerHTML = a3_res;
 }
 
 // TASK 04
@@ -36,6 +61,13 @@ let a4 = [55, 66, 77, 88, 99];
 
 const f4 = () => {
 
+let a4_1 = [];
+
+    for(let i = a4.length - 1; i >= 0; i--) {
+        a4_1.push(a4[i])
+    }
+
+    document.querySelector('.out-4').innerHTML = a4_1;
 }
 
 // TASK 05
@@ -44,6 +76,26 @@ const f4 = () => {
 let a5 = [1, 2, 3, 4, 5, 6, 7, 8]; // ожидаю [2, 1, 4, 3, 6, 5, 8, 7]
 
 const f5 = () => {
+    let a5_1 = [];
+    let a5_2 = [];
+    let out = [];
+
+    for(let i = 0; i < a5.length; i++) {
+        if( a5[i] % 2 == 0) {
+            a5_1.push(a5[i]);
+        }else {
+            a5_2.push(a5[i]);
+        }
+    };
+
+    for(let i = 0; i < a5_1.length; i++) {
+        out.push(a5_1[i])
+        out.push(a5_2[i])
+    }
+
+    // console.log(out)
+
+    document.querySelector('.out-5').innerHTML = out;
 }
 
 // TASK 06
@@ -54,6 +106,16 @@ let a6 = [1, 4, 2, 6, 7, 3, 5, 2, 9];
 // a6 = ['hi', 'low', 'lo', 'hihi'];
 
 const f6 = () => {
+    a6.sort((a, b) => {
+        return a - b;
+    })
+    console.log(a6)
+
+    let out = a6.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+
+    document.querySelector('.out-6').innerHTML = out;
 }
 
 // TASK 07
