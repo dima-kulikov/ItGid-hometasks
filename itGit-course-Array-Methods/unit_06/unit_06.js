@@ -34,8 +34,9 @@ let z3 = [];
 
 const f3 = () => {
 
-    z3 = a3.filter((el, index) => {
-        if( index > 4) {
+    let filtIndex = a3.filter((el, index) => {
+        if( el > 4) {
+            z3.push(index)
             return true;
         }
     });
@@ -130,9 +131,9 @@ let z8_2 = [];
 
 const f8 = () => {
 
-    z8 = a8.filter((el, index) => {
-        if( index % 2 == 0) {
-            return true;
+    let myFilter = a8.filter(el => {
+        if( el % 2 == 0) {
+            z8.push(el);
         }else{
             z8_2.push(el);
         };

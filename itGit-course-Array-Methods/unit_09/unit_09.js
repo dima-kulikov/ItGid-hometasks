@@ -110,7 +110,6 @@ const f6 = () => {
     };
    });
 
-
    let out = a6.length - find - 1;
 
    if( find == -1){
@@ -174,17 +173,20 @@ let a10_res = []; // ожидаю [-2, -6];
 
 const f10 = () => {
 
+    let out = [];
+    a10_res = [];
+    
     for(let i = 0; i < a11.length; i++) {
         if( a10[a11[i]] !== undefined) {
-            a10_res.push(a10[a11[i]])
+           out.push(a10[a11[i]])
         }
     };
 
-    let out = a10_res.reduce((accum, item) => {
+    a10_res = out.reduce((accum, item) => {
         return accum += item + ' ';
     }, '')
 
-    document.querySelector('.out-10').innerHTML = out;
+    document.querySelector('.out-10').innerHTML = a10_res;
 }
 
 
