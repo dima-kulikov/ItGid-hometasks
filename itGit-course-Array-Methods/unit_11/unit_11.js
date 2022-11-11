@@ -5,7 +5,7 @@
 let a1 = [13, 15, 22, 23, 26, 35, 72];
 
 const f1 = () => {
-
+    document.querySelector('.out-1').innerHTML = a1.join();
 }
 
 
@@ -15,7 +15,7 @@ const f1 = () => {
 let a2 = [13, 15, 22, 23, 26, 35, 72];
 
 const f2 = () => {
-
+    document.querySelector('.out-2').innerHTML = a2.join('');
 }
 
 // TASK 03
@@ -24,7 +24,7 @@ const f2 = () => {
 let a3 = [13, 15, 22, 23, 26, 35, 72];
 
 const f3 = () => {
-
+    document.querySelector('.out-3').innerHTML = a3.join('=');
 }
 
 // TASK 04
@@ -36,7 +36,18 @@ let a4 = [66, 77, 88];
 let delimiter4 = '-';
 
 const f4 = (arr, delimiter) => {
+    let out = '';
+    
+    for(let i = 0; i < arr.length; i++) {
 
+        if( arr.indexOf(arr[i]) == arr.length -1) {
+            out += arr[i];
+        }else{
+            out += arr[i] + delimiter;
+        }
+    };
+
+    return out;
 }
 
 // TASK 05
@@ -48,6 +59,7 @@ a5[56] = 56;
 a5[57] = 56;
 
 const f5 = () => {
+    document.querySelector('.out-5').innerHTML = a5.join('=');
 }
 
 // TASK 06 
@@ -59,7 +71,9 @@ let a6_res = [];
 
 const f6 = () => {
 
-    // document.querySelector('.out-6').innerHTML = result;
+    a6_res = s6.split('');
+
+    document.querySelector('.out-6').innerHTML = a6_res;
 }
 
 // TASK 07
@@ -70,7 +84,9 @@ let s7 = 'hello';
 let a7_res = [];
 
 const f7 = () => {
-    // document.querySelector('.out-7').innerHTML = result;
+
+    a7_res = s7.split('', 3);
+    document.querySelector('.out-7').innerHTML = a7_res;
 }
 
 // TASK 08
@@ -80,6 +96,12 @@ let s8 = 'abrikos';
 let a8_res = '';
 
 const f8 = () => {
+    
+    let out = s8.split('');
+    out.reverse();
+    a8_res = out.join('');
+
+    document.querySelector('.out-8').innerHTML = a8_res;
 }
 
 // TASK 09
@@ -89,7 +111,13 @@ let s9 = 'hiall';
 let a9_res = [];
 
 const f9 = () => {
-    // a9_res = [...s9];
+    a9_res = [...s9];
+
+    let out = a9_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 // TASK 10
@@ -100,6 +128,15 @@ let s10 = 'fghijklmnoprsq';
 let a10_res = [];
 
 const f10 = () => {
+    a10_res = [...s10];
+
+    a10_res = a10_res.filter(el => el < 'l');
+
+    let out = a10_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-10').innerHTML = out;    
 }
 
 
