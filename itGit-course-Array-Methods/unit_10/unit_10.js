@@ -106,10 +106,7 @@ let a6 = [1, 4, 2, 6, 7, 3, 5, 2, 9];
 // a6 = ['hi', 'low', 'lo', 'hihi'];
 
 const f6 = () => {
-    a6.sort((a, b) => {
-        return a - b;
-    })
-    console.log(a6)
+    a6.sort()
 
     let out = a6.reduce((accum, item) => {
         return accum += item + ' ';
@@ -125,6 +122,13 @@ const f6 = () => {
 let a7 = [10, 4, 20, 6, 70, 30, 5, 2, 9];
 
 const f7 = () => {
+    a7.sort();
+
+    let out = a7.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-7').innerHTML = out;
 }
 
 // TASK 08
@@ -133,6 +137,15 @@ const f7 = () => {
 let a8 = [10, 4, 20, 6, 70, 30, 5, 2, 9];
 
 const f8 = () => {
+    a8.sort((a, b) => {
+        return a - b;
+    });
+
+    let out = a8.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-8').innerHTML = out;
 }
 
 // TASK 09
@@ -141,6 +154,19 @@ const f8 = () => {
 let a9 = [9, 9, 45, 3, 1, 83, 50, 6, 5, 35, 8, 4];
 
 const f9 = (s) => {
+
+        a9.sort((a, b) => {
+            if( s == 'ASC') {
+                return a - b;
+            }
+            return b - a;
+        });
+
+    let out = a9.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+  return out;
 }
 
 // TASK 10
@@ -159,6 +185,15 @@ let a10 = [
 ];
 
 const f10 = () => {
+    a10.sort((a, b) => {
+        return a.age - b.age;
+    })
+
+    let out = a10.reduce((accum, item) => {
+        return accum += item.name + ' ';
+    }, '');
+
+    document.querySelector('.out-10').innerHTML = out;
 }
 
 
