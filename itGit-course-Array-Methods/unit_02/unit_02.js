@@ -131,7 +131,7 @@ let a7 = [21, 22, 23, 24, 25, 26, 27];
 const f7 = (arr, elem) => {
     
     for(let i = 0; i < arr.length; i++) {
-        if(a7[i] == elem) {
+        if(arr[i] == elem) {
             return document.querySelector('.out-7').innerHTML = true;
         }else{
             document.querySelector('.out-7').innerHTML = false;

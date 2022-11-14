@@ -96,10 +96,14 @@ let out = a5.findIndex( el => {
 //  По нажатию b-6 выполняется функция f6. Функция с помощью findIndex должна найти ПОСЛЕДНИЙ индекс элемента массива a6, значение которого лежит от a6_from до a6_to (больше a6_from но меньше a6_to). Вывести найденный индекс в out-6. Если значение не найдено то выводить false.
 
 
-let a6 = [13, 15, 22, 23, 26, 35, 72];
-let a6_from = 23;
-let a6_to = 67; 
+// let a6 = [13, 15, 22, 23, 26, 35, 72];
+// let a6_from = 23;
+// let a6_to = 67;
 
+let a6 = [4, 5, 6, 7, 8, 9, 10];
+let a6_from = 7;
+let a6_to = 10; 
+// https://codepen.io/skaizy/pen/eYKWdgG?editors=1011
 const f6 = () => {
 
    let reversArr = a6.reverse();

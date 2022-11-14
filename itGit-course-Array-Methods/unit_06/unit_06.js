@@ -130,11 +130,12 @@ let z8 = [];
 let z8_2 = [];
 
 const f8 = () => {
-
-    let myFilter = a8.filter(el => {
+    
+    z8_2 = [];
+    z8 = a8.filter(el => {
         if( el % 2 == 0) {
-            z8.push(el);
-        }else{
+            return true;
+        } else{
             z8_2.push(el);
         };
     });
