@@ -8,6 +8,9 @@ let a1_to = 100;
 
 const f1 = () => {
 
+    let out = a1.every(el => el > a1_from && el < a1_to);
+
+    document.querySelector('.out-1').innerHTML = out;
 }
 
 
@@ -20,6 +23,9 @@ let a2_to = 100;
 
 const f2 = () => {
 
+    let out = a2.every( el => el > a2_from && el < a2_to);
+
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 // TASK 03
@@ -29,6 +35,19 @@ const f2 = () => {
 let a3 = [[5, 5, 11], [10, 10, 17]];
 
 const f3 = () => {
+    let myArr = [];
+
+    for(let i = 0; i < a3.length; i++) {
+        let out = 0;
+        for(let k = 0; k < a3[i].length; k++){
+            out += a3[i][k];
+        }
+        myArr.push(out);
+    }
+    
+    let myOut = myArr.every(el => el > 20);
+
+    document.querySelector('.out-3').innerHTML = myOut;
 
 }
 // В задаче 3 для вычисления суммы массива можно использовать вспомогательную доп. функцию которая считает сумму элементов.
@@ -44,6 +63,13 @@ let a4 = [[100, 200], [300, 100, 400], [500, 700, 100, 800]];
 
 const f4 = () => {
 
+    // for(let i = 0; i < a4.length; i++) {
+    //     let oneArr = examination(a4[i]);
+    // }
+
+    // function examination (el) {
+    //     let out = el.e 
+    // }
 }
 
 // TASK 05
@@ -60,6 +86,10 @@ let a5 = [
 ];
 
 const f5 = () => {
+    let ageArr = a5.filter( el => el.age >= 16);
+    let payArr = ageArr.every( el => el.pay == true);
+
+    document.querySelector('.out-5').innerHTML = payArr;
 }
 
 // TASK 06
@@ -67,9 +97,19 @@ const f5 = () => {
 
 
 let a6 = [1, 4, 2, 6, 7, 3, 5, 2, 9];
-let a6_from = 1
+let a6_from = 1;
 
 const f6 = () => {
+    let out = () => {
+        for(let i = 0; i < a6.length; i++) {
+            if( a6[i] < a6_from) {
+                return false;
+            }
+            return true;
+        }
+    };
+
+    document.querySelector('.out-6').innerHTML = out();
 }
 
 // TASK 07
@@ -81,11 +121,16 @@ let a7_from = 5;
 
 const f7 = () => {
     let res = a7.every((item, index) => {
+        console.log(index)
         if (index == 2) {
             a7.push(2);
         }
-        // тут ваш if....
+       if( item > a7_from) {
+        return true;
+       }
     });
+    // console.log(res)
+    // console.log(a7)
     document.querySelector('.out-7').innerHTML = res;
 }
 
@@ -95,6 +140,10 @@ const f7 = () => {
 let a8 = [10, 4, 20, 6, 70, 30, 500, 2, 9];
 
 const f8 = () => {
+    let out = a8.some( el => el > 100);
+
+    document.querySelector('.out-8').innerHTML = out;
+
 }
 
 // TASK 09
@@ -113,6 +162,9 @@ let a9 = [
 ];
 
 const f9 = () => {
+    let out = a9.some( el => el.age <= 16);
+
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 // TASK 10
@@ -122,11 +174,17 @@ let a10 = [10, 20, 30, 50, 60];
 let a10_from = 55;
 
 const isBigFrom = num => {
-    // где в качестве num вы передаете a10_from
+    
+    let out = a10.some( el => {
+        if( el > num) {
+         return true;
+        }
+     });
+     return out;
 }
 
 const f10 = () => {
-
+    document.querySelector('.out-10').innerHTML = isBigFrom(a10_from);
 }
 
 
