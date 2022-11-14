@@ -63,14 +63,15 @@ let a4 = [[100, 200], [300, 100, 400], [500, 700, 100, 800]];
 
 const f4 = () => {
 
-    // for(let i = 0; i < a4.length; i++) {
-    //     let oneArr = examination(a4[i]);
-    // }
-
-    // function examination (el) {
-    //     let out = el.e 
-    // }
-}
+    let out = a4.every( el => {
+        if(el.includes(100)){
+            return true;
+        }
+    })
+    
+        document.querySelector('.out-4').innerHTML = out;
+    
+    }
 
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция с помощью every проверяет, что все совершеннолетние пользователи (больше или равно 16 лет) провели оплату ( pay - true). Результат проверки вывести в out-5. 

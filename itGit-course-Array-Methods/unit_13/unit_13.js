@@ -6,7 +6,13 @@ let a1 = [13, [4, 5], 22, [6, 7], [26, 35, 72]];
 let a1_res = [];
 
 const f1 = () => {
+ a1_res = a1.flat();
 
+let out = a1_res.reduce((accum, item) => {
+    return accum += item + ' ';
+}, '')
+
+ document.querySelector('.out-1').innerHTML = out;
 }
 
 
@@ -17,8 +23,14 @@ let a2 = [13, [11, 22], [33, 44, 55], [66, 77, 88], 72];
 let a2_res = [];
 
 const f2 = () => {
+    a2_res = a2.flat(1);
 
-}
+    let out = a2_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    
+     document.querySelector('.out-2').innerHTML = out;
+    }
 
 // TASK 03
 // По нажатию b-3 выполняется функция f3. Функция с помощью flat должна массив a3 превратить в одномерный a3_res. Вывести a3_res в out-3. Разделитель - пробел. Обратите внимание, что при проверке будет взят массив вложенности не более указанного.
@@ -29,8 +41,14 @@ a3[200] = [11, 22, 33, [55]];
 let a3_res = [];
 
 const f3 = () => {
+    a3_res = a3.flat(2);
 
-}
+    let out = a3_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    
+     document.querySelector('.out-3').innerHTML = out;
+    }
 
 // TASK 04
 // По нажатию b-4 выполняется функция f4. Функция с помощью fill должна изменить массив a4 так, что со 2 индекса по 5 будут залиты числом 7. Выведите a4 в out-4, разделитель пробел.
@@ -41,7 +59,14 @@ let a4 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const f4 = () => {
 
-}
+    let a4_1 = a4.fill(7, 2, 5);
+
+    let out = a4_1.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    
+     document.querySelector('.out-4').innerHTML = out;
+    }
 
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция с помощью fill должна изменить массив a5 так, что со 2 индекса все элементы будут равны 0. Выведите a5 в out-5, разделитель пробел.
@@ -50,12 +75,26 @@ const f4 = () => {
 let a5 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const f5 = () => {
-}
+    a5.fill(0, 2);
+
+    let out = a5.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '')
+    
+     document.querySelector('.out-5').innerHTML = out;
+    }
 
 // TASK 06 
 // По нажатию b-6 выполняется функция f6. Напишем функцию, которая принимает 2 параметра - количество элементов массива и число, которым этот массив нужно заполнить. Возвращает массив указанной размерности заполненный указанным числом.
 
 const f6 = (l, n) => {
+let a6 = [];
+
+for(let i = 0; i < l; i++) {
+    a6.push(n)
+}
+
+return a6;
 
 }
 
@@ -64,6 +103,13 @@ const f6 = (l, n) => {
 
 
 const f7 = (l) => {
+    let a7 = [];
+
+for(let i = 0; i < l; i++) {
+    a7.push(Math.floor(Math.random() * 100) + 1)
+}
+
+return a7;
 }
 
 // TASK 08
@@ -75,6 +121,13 @@ a8[200] = 300;
 let a8_res = [];
 
 const f8 = () => {
+    a8_res = Object.keys(a8);
+
+    let out = a8_res.reduce((accum, item) => {
+       return accum += item + ' '
+    }, '')
+
+    document.querySelector('.out-8').innerHTML = out;
 }
 
 // TASK 09
@@ -91,6 +144,13 @@ let a9_res = [];
 
 const f9 = () => {
 
+    a9_res = Object.keys(a9);
+
+    let out = a9_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 // TASK 10
@@ -104,6 +164,19 @@ a10[200] = 300;
 let a10_res = [];
 
 const f10 = () => {
+    a10_res = [];
+    
+    for(let i = 0; i < a10.length; i++) {
+        if( a10[i] !== undefined) {
+            a10_res.push(a10.indexOf(a10[i]))
+        }
+    };
+
+    let out = a10_res.reduce((accum, item) => {
+        return accum += item + ' ';
+    }, '');
+
+    document.querySelector('.out-10').innerHTML = out;
 }
 
 

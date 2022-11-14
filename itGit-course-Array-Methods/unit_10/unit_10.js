@@ -67,7 +67,8 @@ let a4_1 = [];
         a4_1.push(a4[i])
     }
 
-    document.querySelector('.out-4').innerHTML = a4_1;
+    return a4_1;
+
 }
 
 // TASK 05
@@ -93,9 +94,7 @@ const f5 = () => {
         out.push(a5_2[i])
     }
 
-    // console.log(out)
-
-    document.querySelector('.out-5').innerHTML = out;
+    return out;
 }
 
 // TASK 06
@@ -158,15 +157,13 @@ const f9 = (s) => {
         a9.sort((a, b) => {
             if( s == 'ASC') {
                 return a - b;
-            }
+            }else if (s == 'DESC') {
             return b - a;
+            }
+             return;
         });
 
-    let out = a9.reduce((accum, item) => {
-        return accum += item + ' ';
-    }, '');
-
-  return out;
+  return a9;
 }
 
 // TASK 10
