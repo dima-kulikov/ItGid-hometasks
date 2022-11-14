@@ -103,26 +103,29 @@ let out = a5.findIndex( el => {
 let a6 = [4, 5, 6, 7, 8, 9, 10];
 let a6_from = 7;
 let a6_to = 10; 
-// https://codepen.io/skaizy/pen/eYKWdgG?editors=1011
+
 const f6 = () => {
-
-   let reversArr = a6.reverse();
+    let reversArr = [];
    
-   let find = reversArr.findIndex(el => {
-    if(el > a6_from && el < a6_to) {
-        return true;
-    };
-   });
-
-   let out = a6.length - find - 1;
-
-   if( find == -1){
-    out = false;
+    for(let i = a6.length - 1; i >= 0 ; i--){
+        reversArr.push(a6[i]);
+      }
+     
+       let find = reversArr.findIndex(el => {
+       if(el > a6_from && el < a6_to) {
+           return true;
+       };
+      });
+   
+       let out = reversArr.length - find - 1;
+   
+      if( find == -1){
+       out = false;
+      }
+     
+   document.querySelector('.out-6').innerHTML = out;
+   
    }
-
-document.querySelector('.out-6').innerHTML = out;
-
-}
 
 // TASK 07
 // По нажатию b-7 выполняется функция f7. Функция с помощью lastIndexOf должна найти наибольший индекс символа a7_1 в строке str7, и вывести out-7. Если значение не найдено то выводить -1. Обратите внимание, что lastIndexOf зависит от регистра. 
