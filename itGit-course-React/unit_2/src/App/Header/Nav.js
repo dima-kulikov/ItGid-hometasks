@@ -1,11 +1,13 @@
-function Nav() {
+function Nav(props) {
+    let outNavList = props.nav.map(item => <li key={item.link}><a href={item.link}>{item.text}</a></li>) 
+
+
     return(
         <nav>
             <ul className="main-navigation">
-            {/* здесь будет распечатан props */}
-            <p>hi Dima</p>
+                {outNavList}
             </ul>
-</nav>
+        </nav>
     );
 }
 

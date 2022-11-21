@@ -3,9 +3,9 @@ import Nav from '../Header/Nav';
 function Header(props) {
     return (
         <header>
-            <h1>site_name</h1>
-            <h2>site_title</h2>
-           <Nav/>
+            <h1>{props.site.site_name}</h1>
+            <h2>{props.site.site_title}</h2>
+            <Nav nav = {props.site.nav} />
         </header>
     );
 }

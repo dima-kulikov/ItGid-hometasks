@@ -4,6 +4,7 @@ import Header from './App/Header/Header';
 import Main from './App/Main/Main';
 import Sidebar from './App/Main/Sidebar';
 import Footer from './App/Footer/Footer';
+// import Nav from './App/Header/Nav';
 
 const site = {
 	site_name : "react test",
@@ -19,10 +20,11 @@ const site = {
 function App() {
   return (
    <>
-   <Header site={site}/>
+   <Header site={site} />
    <Main/>
    <Sidebar/>
-   <Footer/>
+   <Footer site={site} />
+
    </>
   );
 }
