@@ -1,65 +1,75 @@
 import './App.css';
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function App() {
   let count4 = 0;
 
   function task1() {
-
+    console.log('task2')
   }
   function task2() {
-
+    let task2 = document.querySelector('.task-2');
+    task2.classList.add('active');
   }
-  function task3() {
-
+  function task3(event) {
+    console.log(event.target.value)
   }
   function task4() {
-
+    count4 += 1;
+    console.log(count4)
   }
-  function task5() {
+  function task5(event) {
+    
+    console.log(event.current.value )
+    let div5 = document.querySelector('.out-5');
 
+    if(event.target.checked) {
+      div5.innerHTML = event.target.value;
+    }else{
+      div5.innerHTML = 0;
+    }
   }
-  function task6() {
+  // function task6() {
 
-  }
-  function task7() {
+  // }
+  // function task7() {
 
-  }
-  function task8() {
+  // }
+  // function task8() {
 
-  }
-  function task9() {
+  // }
+  // function task9() {
 
-  }
-  let ar10 = [5, 6, 7];
-  function task10() {
+  // }
+  // let ar10 = [5, 6, 7];
+  // function task10() {
 
-  }
+  // }
 
   return (
     <>
       <h1>События</h1>
       <section>
         <h2>Task 1</h2>
-        <button className="task-1">Push</button>
+        <button className="task-1" onClick={task1}>Push</button>
       </section>
       <section>
         <h2>Task 2</h2>
-        <div className="task-2"></div>
+        <div className="task-2" onMouseEnter={task2}></div>
       </section>
       <section>
         <h2>Task 3</h2>
-        <input type="text" className="task-3" />
+        <input type="text" className="task-3" onInput={task3} />
       </section>
       <section>
         <h2>Task 4</h2>
-        <button className="task-4">Count</button>
+        <button className="task-4" onClick={task4}>Count</button>
       </section>
       <section>
         <h2>Task 5</h2>
-        <input type="checkbox" currentValue="55" />
+        <input type="checkbox" currentValue="55" onChange={task5}/>
         <div className="out-5"></div>
       </section>
       <section>
