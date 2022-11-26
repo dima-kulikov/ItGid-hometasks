@@ -1,10 +1,16 @@
 import './App.css';
 import React from 'react';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 
 function App() {
   let count4 = 0;
+  let refTask6 = React.createRef();
+  let refOut = React.createRef();
+  const [out6, setOut6] = useState('');
+  let refTask7 = React.createRef();
+  let refTask8Out = React.createRef();
+  let countTask8 = '';
 
   function task1() {
     console.log('task2')
@@ -21,8 +27,6 @@ function App() {
     console.log(count4)
   }
   function task5(event) {
-    
-    console.log(event.current.value )
     let div5 = document.querySelector('.out-5');
 
     if(event.target.checked) {
@@ -31,15 +35,34 @@ function App() {
       div5.innerHTML = 0;
     }
   }
-  // function task6() {
 
-  // }
-  // function task7() {
+  function task6() {
+    // console.log(refTask6.current.value);
+    refOut.current.innerHTML = refTask6.current.value;
+    setOut6(refTask6.current.value);
 
-  // }
-  // function task8() {
+  }
+  function task7() {
 
-  // }
+    //функция возвращает чисто от 1 до 255
+    function RundomColor() {
+     return Math.floor(Math.random()*255) + 1;
+    }
+
+    refTask7.current.style.backgroundColor = `rgb(${RundomColor()}, ${RundomColor()}, ${RundomColor()})`;
+  }
+  
+  function task8(e) {
+
+  if(isNaN(e.key)){
+    countTask8 += 0;
+    refTask8Out.current.innerHTML = countTask8;
+  }else{
+    countTask8 += 1;
+    refTask8Out.current.innerHTML = countTask8;
+  };
+  };
+
   // function task9() {
 
   // }
@@ -69,27 +92,29 @@ function App() {
       </section>
       <section>
         <h2>Task 5</h2>
-        <input type="checkbox" currentValue="55" onChange={task5}/>
+        <input type="checkbox" value="55" onChange={task5}/>
         <div className="out-5"></div>
       </section>
       <section>
         <h2>Task 6</h2>
-        <select className="task-6">
+        <select className="task-6" onChange={task6} ref={refTask6}>
           <option value="7">seven</option>
           <option value="4">four</option>
           <option value="9">nine</option>
           <option value="10">ten</option>
         </select>
+        <div className="out-6" ref={refOut}></div>
+        <div className="out-6">{out6}</div>
       </section>
       <section>
         <h2>Task 7</h2>
-        <div className="block-7"></div>
-        <button className="task-7">Color</button>
+        <div className="block-7" ref={refTask7}></div>
+        <button className="task-7" onClick={task7}>Color</button>
       </section>
       <section>
         <h2>Task 8</h2>
-        <input type="text" className="task-8"></input>
-        <div className="out-8"></div>
+        <input type="text" className="task-8" onKeyPress={task8}></input>
+        <div className="out-8" ref={refTask8Out}></div>
       </section>
       <section>
         <h2>Task 9</h2>
