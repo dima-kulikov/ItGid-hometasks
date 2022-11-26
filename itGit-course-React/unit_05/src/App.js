@@ -4,53 +4,66 @@ import { useState } from 'react';
 
 
 function App() {
+  const [st1, setSt1] = useState('');
+  let input1 = React.createRef();
+
+  const [st2, setSt2] = useState('');
+
 
   function task1() {
-
+    let state = st1;
+     state = input1.current.value;
+    setSt1(state)
   }
+
+
   function task2() {
-
+    let state = st2;
+    state++;
+    setSt2(state)
   }
-  function task3() {
 
-  }
-  function task4() {
+  
+  // function task3() {
 
-  }
-  function task5() {
+  // }
+  // function task4() {
 
-  }
-  function task6() {
+  // }
+  // function task5() {
 
-  }
-  function task7() {
+  // }
+  // function task6() {
 
-  }
-  function task8() {
+  // }
+  // function task7() {
 
-  }
-  function task9() {
+  // }
+  // function task8() {
 
-  }
-  function task10() {
+  // }
+  // function task9() {
 
-  }
+  // }
+  // function task10() {
+
+  // }
 
   return (
     <>
       <h1>События</h1>
       <section>
         <h2>Task 1</h2>
-		<input type="text"/>
-        <button className="task-1">Push</button>
+		<input type="text" ref={input1} />
+        <button className="task-1" onClick={task1}>Push</button>
         <div>{st1}</div>
       </section>
-      <section>
+       <section>
         <h2>Task 2</h2>
-        <div className="task-2"></div>
+        <div className="task-2" onMouseEnter={task2}></div>
         <div>{st2}</div>
       </section>
-      <section>
+      {/*<section>
         <h2>Task 3</h2>
         <input type="text" className="task-3" />
         <div>{st3}</div>
@@ -96,7 +109,7 @@ function App() {
         <input type="number" className="i-10"></input>
         <button className="task-10">Push</button>
         <div>Тут выводим - форма вывода любая!</div>
-      </section>
+      </section> */}
     </>
   );
 }
