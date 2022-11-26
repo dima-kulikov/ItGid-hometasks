@@ -11,6 +11,8 @@ function App() {
   let refTask7 = React.createRef();
   let refTask8Out = React.createRef();
   let countTask8 = '';
+  let refTask9 = useState('');
+  let refTask10 = useState('');
 
   function task1() {
     console.log('task2')
@@ -37,7 +39,6 @@ function App() {
   }
 
   function task6() {
-    // console.log(refTask6.current.value);
     refOut.current.innerHTML = refTask6.current.value;
     setOut6(refTask6.current.value);
 
@@ -63,13 +64,15 @@ function App() {
   };
   };
 
-  // function task9() {
+  function task9(e) {
+    refTask9.current.innerHTML = e.target.value;
+  };
 
-  // }
-  // let ar10 = [5, 6, 7];
-  // function task10() {
-
-  // }
+  let ar10 = [5, 6, 7];
+  function task10() {
+  ar10.push(refTask10.current.value)
+  console.log(ar10)
+  }
 
   return (
     <>
@@ -118,13 +121,13 @@ function App() {
       </section>
       <section>
         <h2>Task 9</h2>
-        <input type="range" className="task-9"></input>
-        <div className="out-9"></div>
+        <input type="range" className="task-9" onInput={task9}></input>
+        <div className="out-9" ref={refTask9}></div>
       </section>
       <section>
         <h2>Task 10</h2>
-        <input type="number" className="i-10"></input>
-        <button className="task-10">Push</button>
+        <input type="number" className="i-10" ref={refTask10}></input>
+        <button className="task-10"  onClick={task10}>Push</button>
       </section>
     </>
   );
