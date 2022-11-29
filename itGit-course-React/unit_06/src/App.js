@@ -6,6 +6,8 @@ function App() {
   return (
   <>
   <Homework1 p1={88}/>
+  <h1>Lesiaaaa</h1>
+
   </>
   );
 }
