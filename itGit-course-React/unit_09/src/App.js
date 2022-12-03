@@ -1,5 +1,5 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
 // import Button from './Button';
 // import PlaceholderPost from './PlaceholderPost';
 // import Comment from './Comment';
@@ -8,13 +8,12 @@ import React from 'react';
 // Мои работы, закоментированны, чтобы небыло ошибок, раскоментировав все работает
 // СДЕЛАННО ЧЕРЕЗ ФУНКЦИОНАЛЬНЫЙ КОМПОНЕНТ
 // import PlaceholderPostHook from './PlaceholderPostHook';
-import CommentHook from './CommentHook'
+// import CommentHook from './CommentHook';\
+import Comment2Hook from "./Comment2Hook";
 
 // СДЕЛАННО ЧЕРЕЗ КЛАССОВЫЙ КОМПОНЕНТ
 // import PlaceholderPostClass from './PlaceholderPostClass';
 // import CommentClass from './CommentClass';
-
-
 
 function App() {
   return (
@@ -22,12 +21,13 @@ function App() {
       {/* <PlaceholderPost /> */}
       {/* <Comment/> */}
       {/* <Comment2/> */}
-      {/* СДЕЛАННО ФУНКЦИОНАЛЬНЫЫМ */}
+
+      {/* ---СДЕЛАННО ФУНКЦИОНАЛЬНЫЫМ--- */}
       {/* <PlaceholderPostHook/> */}
-      <CommentHook/>
+      {/* <CommentHook/> */}
+      <Comment2Hook />
 
-
-      {/* СДЕЛАННО КЛАССОМ -- ВЫВВОД СПИСКА */}
+      {/* ---СДЕЛАННО КЛАССОМ -- ВЫВВОД СПИСКА--- */}
       {/* <PlaceholderPostClass/>
       <CommentClass/> */}
     </>
