@@ -7,7 +7,8 @@ import React from 'react';
 
 // Мои работы, закоментированны, чтобы небыло ошибок, раскоментировав все работает
 // СДЕЛАННО ЧЕРЕЗ ФУНКЦИОНАЛЬНЫЙ КОМПОНЕНТ
-import PlaceholderPostHook from './PlaceholderPostHook';
+// import PlaceholderPostHook from './PlaceholderPostHook';
+import CommentHook from './CommentHook'
 
 // СДЕЛАННО ЧЕРЕЗ КЛАССОВЫЙ КОМПОНЕНТ
 // import PlaceholderPostClass from './PlaceholderPostClass';
@@ -22,7 +23,8 @@ function App() {
       {/* <Comment/> */}
       {/* <Comment2/> */}
       {/* СДЕЛАННО ФУНКЦИОНАЛЬНЫЫМ */}
-      <PlaceholderPostHook/>
+      {/* <PlaceholderPostHook/> */}
+      <CommentHook/>
 
 
       {/* СДЕЛАННО КЛАССОМ -- ВЫВВОД СПИСКА */}
