@@ -2,7 +2,7 @@ function List(data) {
   return (
     <div>
       <ul>
-        {data.user.map((item) => (
+        {data.users.map((item) => (
           <li key={item.passport}>{item.name}</li>
         ))}
       </ul>
