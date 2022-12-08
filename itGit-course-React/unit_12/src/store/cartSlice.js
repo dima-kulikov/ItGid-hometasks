@@ -7,9 +7,12 @@ export const cartSlice = createSlice({
         value: {}
     },
     reducers: {
-        increment: (state, data) => {console.log(data)};
+        increment: (state, data) => {
+        console.log(data)
         let articul = data.payload;
-        if(state.value[ar])
+        if(state.value[articul] === undefined) state.value[articul] = 0;
+        state.value[articul]++;
+    }
     }
 });
 
