@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -11,6 +11,7 @@ function App() {
   const [t3, setT3] = useState('');
   const [t4, setT4] = useState('');
   const [t5, setT5] = useState('');
+  
 
   function task1 () {
     fetch('http://unit14.ua/api.php', {
@@ -61,15 +62,18 @@ function App() {
       })
     })
       .then( data => data.text())
-      .then(data => setT3(data));
-
-      if( t3 === '0') {
-        setT3(false)
-        alert('seee')
-      }else{
+      .then(data => {
+      if( data > '0') {
         setT3(filename)
+
       }
+      else {
+        setT3('false');
+
   }
+});
+  }
+
 
   function task4(event) {
     event.preventDefault();
@@ -97,15 +101,7 @@ function App() {
     .then (data => setT5(data))
   }
 
-  useEffect(() => {
-    // function myFile() {
-    //   if(t3 === false){
-    //     return ' ';
-    //   }else{
-    //     return `<a href='sss'>`
-    //   }
-    // }
-  });
+
 
   return (
     <div>
@@ -136,7 +132,8 @@ function App() {
           <button type="sumbit">Push</button>
         </form>
         <p>{t3}</p>
-        {/* <p>{myFile}</p> */}
+        {/* <p>{myOut(t3)}</p> */}
+        <p>{t3 === 'false' ? '' : <a href={'http://unit14.ua/files/'+t3}>{t3}</a>}</p>
       </div>
       <hr/>
       <div>
