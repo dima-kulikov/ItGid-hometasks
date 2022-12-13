@@ -14,7 +14,7 @@ function App() {
   
 
   function task1 () {
-    fetch('http://unit14.ua/api.php', {
+    fetch('http://localhost:3500/', {
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-from-urlencoded',
@@ -30,7 +30,7 @@ function App() {
     let num1 = event.target.num1.value;
     let num2 = event.target.num2.value;
 
-    fetch('http://unit14.ua/api.php', {
+    fetch('http://localhost:3500/', {
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-from-urlencoded',
@@ -50,7 +50,7 @@ function App() {
     let filename = event.target.filename.value;
     let filedata = event.target.filedata.value;
 
-    fetch('http://unit14.ua/api.php', {
+    fetch('http://localhost:3500/', {
       method: 'POST',
       header:{
         'Content-Type': 'application/x-www-from-urlencoded',
@@ -77,7 +77,7 @@ function App() {
 
   function task4(event) {
     event.preventDefault();
-    fetch('http://unit14.ua/api.php', {
+    fetch('http://localhost:3500/', {
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-from-urlencoded',
@@ -88,18 +88,18 @@ function App() {
     .then (data => setT4(data))
   }
 
-  function task5(event) {
-    event.preventDefault();
-    fetch('http://unit14.ua/api.php', {
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/x-www-from-urlencoded',
-      },
-      body: JSON.stringify({action: 5})
-    })
-    .then (response => response.json())
-    .then (data => setT5(data))
-  }
+  // function task5(event) {
+  //   event.preventDefault();
+  //   fetch('http://localhost:3500/', {
+  //     method: 'POST',
+  //     header: {
+  //       'Content-Type': 'application/x-www-from-urlencoded',
+  //     },
+  //     body: JSON.stringify({action: 5})
+  //   })
+  //   .then (response => response.json())
+  //   .then (data => setT5(data))
+  // }
 
 
 
@@ -133,7 +133,7 @@ function App() {
         </form>
         <p>{t3}</p>
         {/* <p>{myOut(t3)}</p> */}
-        <p>{t3 === 'false' ? '' : <a href={'http://unit14.ua/files/'+t3}>{t3}</a>}</p>
+        <p>{t3 === 'false' ? '' : <a href={'http://localhost:3500/files/'+t3}>{t3}</a>}</p>
       </div>
       <hr/>
       <div>
@@ -143,13 +143,13 @@ function App() {
         </form>
         <p>{t4} </p>
       <hr/>
-      <div>
+      {/* <div>
       <h2>Получение курса валют</h2>
         <form action="" onSubmit = {task5}>
           <button type="sumbit">Push</button>
         </form>
           <ul>{Object.keys(t5).map(item => ( <li key={item}> {t5[item].ccy} -  {t5[item].sale}</li> ))}</ul>
-      </div>
+      </div> */}
     </div>
     </div>
   );
