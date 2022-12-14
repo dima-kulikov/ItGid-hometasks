@@ -8,7 +8,7 @@ html, body {
 .main{
     margin: 0 auto;
     max-width: 1200px;
-    background-color: aliceblue;
+    background-color: rgb(242, 239, 239);
     min-height: 100%;
 
 }
@@ -21,13 +21,13 @@ html, body {
     background-color: rgb(176, 191, 191);
     max-width: 100%;
     margin: 0 auto;
-    padding: 5px 0;
+    padding: 10px 0;
     margin-bottom: 30px;
 }
 .header ul {
     display: flex;
     justify-content: space-around;
-    max-width: 500px;
+    max-width: 400px;
     margin: 0;
 }
 .header ul li {
@@ -52,4 +52,18 @@ html, body {
 
 .about {
     padding: 0 15px;
+}
+/* main */
+.main-components {
+    padding: 0 15px;
+}
+.main-components h1, p{
+    text-align: center;
+}
+
+.main-components a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
 }

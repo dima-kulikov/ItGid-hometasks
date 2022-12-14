@@ -1,7 +1,7 @@
 function Error() {
     return (
       <div>
-       ERROR
+      <img style={{maxWidth: "100%", margin:'0 auto', display:"block"}} src="../img/page_404.jpg" alt="error 404" />
       </div>
     );
   }

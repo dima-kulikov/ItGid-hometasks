@@ -18,7 +18,7 @@ function App() {
           <Route exact path='/create' element={<Create/>} />
           <Route exact path='/note' element={<Note/>} />
           <Route exact path='/note/:noteURL' element={<Note/>} />
-          <Route element={<Error/>} />
+          <Route path="*" element={<Error/>} />
         </Routes>
       </Router>
       <Footer></Footer>
