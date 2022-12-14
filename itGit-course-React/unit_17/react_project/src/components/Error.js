@@ -1,7 +1,7 @@
 function Error() {
     return (
       <div>
-        
+       ERROR
       </div>
     );
   }
