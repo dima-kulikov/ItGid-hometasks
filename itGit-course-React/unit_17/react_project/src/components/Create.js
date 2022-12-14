@@ -39,7 +39,7 @@ function Create() {
     }
 
     return (
-        <div>
+        <div className='flex-height'>
             <form onSubmit={loadDataFromForm} className={formClass}>
                 <label htmlFor="">Введите заметку</label>
                 <textarea name="note" id="note" defaultValue="Test"></textarea>

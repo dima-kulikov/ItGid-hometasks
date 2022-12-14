@@ -1,6 +1,6 @@
 function Main() {
     return (
-      <div className="main-components">
+      <div className="flex-height main-components">
         <h1>Главная страница</h1>
         <p>Создание временной ссылки для передачи информации</p>
       <div>

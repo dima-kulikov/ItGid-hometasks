@@ -1,7 +1,7 @@
 function Footer() {
     return (
-      <div>
-        
+      <div className="footer">
+        <p>Footer Предназначен для вывода разной информации сайта. </p>
       </div>
     );
   }

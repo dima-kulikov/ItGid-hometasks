@@ -61,8 +61,8 @@ function Note() {
     }
 
     return (
-        <div>
-            <div className={lineClass}>
+        <div className="flex-height">
+            <div className={lineClass} >
                 <h4>Note:</h4>
                 <div>{noteText}</div>
                 <div><button onClick={searchNote}>Смотреть еще один note</button></div>
