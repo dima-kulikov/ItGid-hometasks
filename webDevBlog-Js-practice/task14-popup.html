@@ -10,7 +10,9 @@
 
 <body>
     <section>
-        <div class="myBtn">click me!!!</div>
+        <div class="myBtn" onclick="showPopUp()">click me!!!
+            <div class="popUp">Lorem ipsum Error dolores nihil mollitia sapiente!</div>
+        </div>
     </section>
 
 
@@ -23,15 +25,47 @@
         }
 
         .myBtn {
+
             padding: 10px 15px;
             background-color: aliceblue;
             border: 1px solid black;
-            width: max-content;
+            width: 80px;
             cursor: pointer;
+            position: relative;
         }
 
-        .myBtn:ho
+        .popUp {
+            visibility: hidden;
+            top: -70px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 180px;
+            position: absolute;
+            border: 1px solid red;
+            background-color: aquamarine;
+        }
+
+        .popUp::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .show {
+            visibility: inherit;
+        }
     </style>
+
+    <script>
+        function showPopUp() {
+            document.querySelector('.popUp').classList.toggle('show')
+        }
+    </script>
 </body>
 
 
