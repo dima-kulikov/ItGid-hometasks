@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <h1>Запись своих задач</h1>
+
+        <ul id="to-do-list"></ul>
+    </section>
+
+    <style>
+        section {
+            max-width: 900px;
+            background-color: rgb(242, 223, 199);
+            margin-top: 30px;
+            padding: 30px 15px;
+            margin: 0 auto;
+        }
+
+        #to-do-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .li-item {
+            position: relative;
+            border: 1px solid black;
+            padding: 5px 0 5px 25px;
+            margin: 10px 0;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: rgb(223, 205, 182);
+        }
+
+        .li-item:hover {
+            background-color: rgb(228, 225, 219);
+        }
+
+        .li-item::after {
+            content: 'delete';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: red;
+            /* border-width: 0 2px 2px 0;
+            border-color: red;
+            border-style: solid;
+            width: 5px;
+            height: 10px;
+            transform: rotate(45deg); */
+        }
+
+        .done {
+            position: relative;
+            text-decoration: line-through;
+            background-color: rgb(161, 222, 161);
+        }
+
+        .done::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            /* border: 2px solid red; */
+            border-width: 0 4px 4px 0;
+            border-color: rgb(44, 182, 10);
+            border-style: solid;
+            width: 5px;
+            height: 12px;
+            transform: rotate(45deg);
+        }
+    </style>
+
+    <script>
+        let listItem = ["купити кави", "батон", "поповнити мобільник"];
+        let ul = document.querySelector('#to-do-list');
+
+
+        // создаю список с массива
+        for (let i = 0; i < listItem.length; i++) {
+            let li = document.createElement('li');
+            li.classList.add('li-item')
+            // li.classList.add('done')
+            li.innerHTML = listItem[i];
+            ul.appendChild(li)
+        }
+
+        //навешиваю слушатель, чтобы отметить готовые пункты
+        let liAll = document.querySelectorAll('.li-item')
+        console.log(liAll.length)
+        for (let i = 0; i < liAll.length; i++) {
+            liAll[i].onclick = () => {
+                console.log(liAll[i])
+                liAll[i].classList.toggle('done')
+            }
+        }
+
+        //
+
+
+    </script>
+</body>
+
+</html>

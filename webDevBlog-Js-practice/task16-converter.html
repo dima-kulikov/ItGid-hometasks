@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <h1>Конвертор валюти</h1>
+        <div>
+            Ввести долары:
+            <input id="inputUsa" placeholder="0" onkeyup="convertUa()" type="text">
+        </div>
+        <br>
+        <div>В гривнях складає: <span class="ua-convert">0</span> грн.</div>
+
+
+        <h2>Другий варіант</h2>
+        <div>
+            Ввести долары:
+            <input placeholder="0" oninput="convertUa2(this.value)" type="number">
+        </div>
+        <br>
+        <div>В гривнях складає: <span class="ua-convert2">0</span> грн.</div>
+    </section>
+
+    <style>
+        section {
+            max-width: 900px;
+            background-color: antiquewhite;
+            margin-top: 30px;
+            padding: 30px 15px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+
+
+        function convertUa() {
+            const usa = +document.querySelector('#inputUsa').value;
+            const ua = document.querySelector('.ua-convert')
+            const dollarExchange = 37;
+
+            let out = () => {
+                console.log(usa)
+                console.log(dollarExchange)
+                let answer = usa * dollarExchange;
+                return answer;
+            }
+            ua.innerHTML = out();
+        }
+
+        ///--- 2
+        function convertUa2(value) {
+            document.querySelector('.ua-convert2').innerHTML = value * 37;
+        }
+
+    </script>
+</body>
+
+</html>
