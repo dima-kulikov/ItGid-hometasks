@@ -12,7 +12,7 @@
     <section>
         <h3>All infornation:</h3>
 
-        <div class="accordion">
+        <div class="accordion" onclick="accordionMenuOpen()">
             <div class="accordion_btn">Item 1</div>
             <div class="accordion_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error illo voluptatum aut voluptas pariatur neque sunt officia, sed quibusdam,
                 blanditiis libero eum sint accusamus.</div>
@@ -44,8 +44,9 @@
             cursor: pointer;
         }
 
-        .accordion:last-of-type {
+        .accordion_btn:last-of-type {
             border-bottom: 1px solid black;
+            background-color: blue;
         }
 
         .accordion_btn:hover {
@@ -55,7 +56,29 @@
         .accordion_info {
             display: none;
         }
+
+        .active_info {
+            display: block;
+        }
     </style>
+    <script>
+        let btnAccord = document.querySelectorAll('.accordion_btn');
+        let infoAccord = document.querySelectorAll('.accordion_info');
+        let accordion = document.querySelector('.accordion');
+
+
+
+        function accordionMenuOpen(event) {
+            console.log(event)
+        }
+
+        // for (let i = 0; i < btnAccord.length; i++) {
+        //     infoAccord[i].classList.remove('active_info')
+        //     btnAccord[i].onclick = () => {
+        //         btnAccord[i].nextElementSibling.classList.toggle('active_info')
+        //     }
+        // }
+    </script>
 </body>
 
 </html>
