@@ -12,7 +12,7 @@
     <section>
         <h3>All infornation:</h3>
 
-        <div class="accordion" onclick="accordionMenuOpen()">
+        <div class="accordion" onclick="accordionMenuOpen(event)">
             <div class="accordion_btn">Item 1</div>
             <div class="accordion_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error illo voluptatum aut voluptas pariatur neque sunt officia, sed quibusdam,
                 blanditiis libero eum sint accusamus.</div>
@@ -44,10 +44,14 @@
             cursor: pointer;
         }
 
-        .accordion_btn:last-of-type {
+        .activ_accordion_btn {
+            background-color: rgb(219, 215, 200);
+        }
+
+        /* .accordion_btn:last-of-type {
             border-bottom: 1px solid black;
             background-color: blue;
-        }
+        } */
 
         .accordion_btn:hover {
             background-color: rgb(225, 220, 203);
@@ -55,6 +59,10 @@
 
         .accordion_info {
             display: none;
+            background-color: #f7f3e3;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            padding: 10px 15px;
         }
 
         .active_info {
@@ -67,17 +75,37 @@
         let accordion = document.querySelector('.accordion');
 
 
+        // решение первым вариантом
+        // function accordionMenuOpen(event) {
+        //     if (event.target.classList.contains('activ_accordion_btn')) {
+        //         event.target.nextElementSibling.classList.remove('active_info')
+        //         event.target.classList.remove('activ_accordion_btn')
+        //     }
+        //     else if (event.target.classList.contains('accordion_btn')) {
 
-        function accordionMenuOpen(event) {
-            console.log(event)
-        }
 
-        // for (let i = 0; i < btnAccord.length; i++) {
-        //     infoAccord[i].classList.remove('active_info')
-        //     btnAccord[i].onclick = () => {
-        //         btnAccord[i].nextElementSibling.classList.toggle('active_info')
+        //         for (let i = 0; i < btnAccord.length; i++) {
+        //             btnAccord[i].classList.remove('activ_accordion_btn');
+        //             infoAccord[i].classList.remove('active_info');
+        //         }
+
+        //         event.target.nextElementSibling.classList.toggle('active_info')
+        //         event.target.classList.toggle('activ_accordion_btn')
+
+        //     } else {
+        //         return false;
         //     }
         // }
+
+
+        //РЕШЕНИЕ ВТОРЫМ ВАРИАНТОМ
+        for (let i = 0; i < btnAccord.length; i++) {
+            infoAccord[i].classList.remove('active_info')
+            btnAccord[i].onclick = () => {
+                btnAccord[i].nextElementSibling.classList.toggle('active_info')
+                btnAccord[i].classList.toggle('activ_accordion_btn')
+            }
+        }
     </script>
 </body>
 
