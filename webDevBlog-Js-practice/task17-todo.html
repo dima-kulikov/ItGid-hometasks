@@ -11,6 +11,10 @@
 <body>
     <section>
         <h1>Запись своих задач</h1>
+        <form>
+            <input id="inputText" type="text">
+            <button id="inputBtn">Добавить</button>
+        </form>
 
         <ul id="to-do-list"></ul>
     </section>
@@ -44,20 +48,13 @@
             background-color: rgb(228, 225, 219);
         }
 
-        .li-item::after {
-            content: 'delete';
+        .delete {
             position: absolute;
             top: 8px;
             right: 8px;
             font-size: 14px;
             font-weight: 600;
             color: red;
-            /* border-width: 0 2px 2px 0;
-            border-color: red;
-            border-style: solid;
-            width: 5px;
-            height: 10px;
-            transform: rotate(45deg); */
         }
 
         .done {
@@ -71,7 +68,6 @@
             position: absolute;
             top: 6px;
             left: 8px;
-            /* border: 2px solid red; */
             border-width: 0 4px 4px 0;
             border-color: rgb(44, 182, 10);
             border-style: solid;
@@ -82,31 +78,73 @@
     </style>
 
     <script>
-        let listItem = ["купити кави", "батон", "поповнити мобільник"];
+
+
+
+        let listItem = ["купити кави", "батон"];
         let ul = document.querySelector('#to-do-list');
 
 
-        // создаю список с массива
-        for (let i = 0; i < listItem.length; i++) {
+        let inputBtn = document.querySelector('#inputBtn');
+        let inputText = document.querySelector('#inputText');
+
+        inputBtn.addEventListener('click', () => {
+            event.preventDefault();
+            listItem.push(inputText.value)
+
             let li = document.createElement('li');
             li.classList.add('li-item')
-            // li.classList.add('done')
-            li.innerHTML = listItem[i];
+            li.innerHTML = listItem[listItem.length - 1];
+            let div = document.createElement('div');
+            div.classList.add('delete');
+            div.innerHTML = 'delete';
+            li.appendChild(div)
             ul.appendChild(li)
-        }
 
-        //навешиваю слушатель, чтобы отметить готовые пункты
-        let liAll = document.querySelectorAll('.li-item')
-        console.log(liAll.length)
-        for (let i = 0; i < liAll.length; i++) {
-            liAll[i].onclick = () => {
-                console.log(liAll[i])
-                liAll[i].classList.toggle('done')
+            readyElementInList()
+            deleteElementInList()
+
+        })
+
+        // создаю список с массива
+        function listOutput() {
+            for (let i = 0; i < listItem.length; i++) {
+                let li = document.createElement('li');
+                li.classList.add('li-item')
+                li.innerHTML = listItem[i];
+                let div = document.createElement('div');
+                div.classList.add('delete');
+                div.innerHTML = 'delete';
+                li.appendChild(div)
+                ul.appendChild(li)
+            }
+            deleteElementInList();
+            readyElementInList()
+        }
+        listOutput();
+
+
+        // УДАЛЕНИЕ С СПИСКА
+        function deleteElementInList() {
+            let deleteItem = document.querySelectorAll('.delete');
+            for (let i = 0; i < deleteItem.length; i++) {
+                deleteItem[i].onclick = (e) => {
+                    listItem.splice(i, 1);
+                    e.target.parentElement.remove();
+                }
             }
         }
 
-        //
 
+        //навешиваю слушатель, чтобы отметить готовые пункты СДЕЛАННО
+        function readyElementInList() {
+            let liAll = document.querySelectorAll('.li-item');
+            for (let i = 0; i < liAll.length; i++) {
+                liAll[i].onclick = () => {
+                    liAll[i].classList.toggle('done')
+                }
+            }
+        }
 
     </script>
 </body>
