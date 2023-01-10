@@ -1,0 +1,17 @@
+.simple-spinner {
+    height: 50px;
+    width: 50px;
+    border: 5px solid rgba(150, 150, 150, 0.2);
+    border-radius: 50%;
+    border-top-color: rgba(150, 150, 150);
+    animation:  rotate 1s 0s  linear;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    } 
+}
